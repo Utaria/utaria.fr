@@ -94,7 +94,7 @@ header .btn-primary{
 	border: 2px solid #f1c40f;
 	color: #000000;
 	transition: background-color, 0.3s linear;
-    -webkit-transition: background-color, 0.3s linear;
+    -webkit-transition: background-color,color, 0.3s linear;
 }
 header .btn-secondary{
 	background-color: #2980b9;
@@ -109,6 +109,7 @@ header .btn-default:hover{
 }
 header .btn-primary:hover{
 	background-color: transparent;
+	color: #FFF;
 }
 header .btn-secondary:hover{
 	background-color: transparent;
