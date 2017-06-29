@@ -151,10 +151,10 @@ header .banner-primary .container-ip:hover .ip{
 	font-size: 55px;
 }
 header .scroll{
-	position: absolute;left:0;bottom: 10px;
+	position: absolute;left:0;bottom: 20px;
 	width: 100%;height: auto;
 	text-align: center;
-	font-size: 23px;
+	font-size: 22px;
 
 	animation-duration: 1s;
 	animation-name: downup;
@@ -162,12 +162,12 @@ header .scroll{
 }
 @keyframes downup{
 	from{
-		bottom: 15px;
+		bottom: 25px;
 	}
 	50%{
-		bottom: 5px;
+		bottom: 15px;
 	}
 	to{
-		bottom: 15px;
+		bottom: 25px;
 	}
 }
