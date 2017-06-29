@@ -141,6 +141,11 @@ header .banner-primary .ip{
 	line-height: 68px;
 	font-weight: 900;
 	font-size: 46px;
+
+	transition: font-size, 0.1s linear;
+}
+header .banner-primary .container-ip:hover .ip{
+	font-size: 55px;
 }
 header .scroll{
 	position: absolute;left:0;bottom: 10px;
