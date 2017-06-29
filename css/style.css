@@ -66,14 +66,32 @@ header .btn a{
 header .btn-default{
 	background-color: transparent;
 	border: 1px solid #FFF;
+
+	transition: background-color, 0.5s linear;
+    -webkit-transition: background-color, 0.5s linear;
 }
 header .btn-primary{
 	background-color: #f1c40f;
 	border: 1px solid #f1c40f;
+
+	transition: background-color, 1s linear;
+    -webkit-transition: background-color, 0.5s linear;
 }
 header .btn-secondary{
 	background-color: #2980b9;
 	border: 1px solid #2980b9;
+
+	transition: background-color, 1s linear;
+    -webkit-transition: background-color, 0.5s linear;
+}
+header .btn-default:hover{
+	background-color: rgba(255, 255, 255, 0.5);
+}
+header .btn-primary:hover{
+	background-color: transparent;
+}
+header .btn-secondary:hover{
+	background-color: transparent;
 }
 header .banner-primary{
 	margin: auto;
