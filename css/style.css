@@ -62,6 +62,24 @@ header .btn{
 header .btn a{
 	padding-top: auto;
 }
+header .btn i{
+	font-size: 25px;
+	padding-right: 10px;
+}
+header .btn .fa-thumbs-up{
+	transform: rotate(-20deg);
+	transition: transform,color, 0.5s linear;
+}
+header .btn .fa-shopping-cart{
+	transition: color, 0.5s linear;
+}
+header .btn:hover .fa-thumbs-up{
+	transform: rotate(0deg);
+	color: #2980b9;
+}
+header .btn:hover .fa-shopping-cart{
+	color: #f1c40f;
+}
 header .btn-default{
 	background-color: transparent;
 	border: 1px solid #FFF;
@@ -72,7 +90,7 @@ header .btn-default{
 header .btn-primary{
 	background-color: #f1c40f;
 	border: 1px solid #f1c40f;
-
+	color: #000000;
 	transition: background-color, 0.5s linear;
     -webkit-transition: background-color, 0.5s linear;
 }
