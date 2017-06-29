@@ -43,21 +43,23 @@ header:before {
 header .nav-header{
 	display: block;
 	position: relative;
-	width: auto;height: 40px;
+	width: auto;height: 45px;
 	margin-right: 55px;
 	float: right;
 	padding: auto;
 	margin-top: 40px;
 }
-header .btn{
+header .btn {
 	display: block;position: relative;
 	width: auto;height: 100%;
 	float: right;
 	text-align: center;
-	border-radius: 3px;
+	font-size: 18px;
+	font-weight: 700;
+	border-radius: 2px;
 	white-space: nowrap;
-	line-height: 38px;padding-left: 15px;padding-right: 15px; 
-	margin-left: 15px;
+	line-height: 43px;padding-left: 18px;padding-right: 18px; 
+	margin-left: 16px;
 }
 header .btn a{
 	padding-top: auto;
@@ -68,10 +70,10 @@ header .btn i{
 }
 header .btn .fa-thumbs-up{
 	transform: rotate(-20deg);
-	transition: transform,color, 0.5s linear;
+	transition: transform,color, 0.3s linear;
 }
 header .btn .fa-shopping-cart{
-	transition: color, 0.5s linear;
+	transition: color, 0.3s linear;
 }
 header .btn:hover .fa-thumbs-up{
 	transform: rotate(0deg);
@@ -82,27 +84,28 @@ header .btn:hover .fa-shopping-cart{
 }
 header .btn-default{
 	background-color: transparent;
-	border: 1px solid #FFF;
+	border: 2px solid #FFF;
 
-	transition: background-color, 0.5s linear;
-    -webkit-transition: background-color, 0.5s linear;
+	transition: background-color, 0.3s linear;
+    -webkit-transition: background-color, 0.3s linear;
 }
 header .btn-primary{
 	background-color: #f1c40f;
-	border: 1px solid #f1c40f;
+	border: 2px solid #f1c40f;
 	color: #000000;
-	transition: background-color, 0.5s linear;
-    -webkit-transition: background-color, 0.5s linear;
+	transition: background-color, 0.3s linear;
+    -webkit-transition: background-color, 0.3s linear;
 }
 header .btn-secondary{
 	background-color: #2980b9;
-	border: 1px solid #2980b9;
+	border: 2px solid #2980b9;
 
-	transition: background-color, 0.5s linear;
-    -webkit-transition: background-color, 0.5s linear;
+	transition: background-color, 0.3s linear;
+    -webkit-transition: background-color, 0.3s linear;
 }
 header .btn-default:hover{
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 1);
+	color: #000;
 }
 header .btn-primary:hover{
 	background-color: transparent;
