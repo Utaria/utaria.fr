@@ -185,8 +185,19 @@ header .scroll{
 	text-transform: uppercase;
 }
 .section-secondary{
+	text-align: left;
 	background-color: #0a1824;
 	margin-top: 405px;
+}
+.section-secondary .container-chest{
+	position: relative;
+	width: 300px;height: 300px;
+	top: 50px;left: 130px;
+	background-color: #26d653;
+}
+.section-secondary .container-txt{
+	position: relative;
+	padding-left: 480px;padding-top: 120px;
 }
 .section-secondary h1{
 	padding-top: 125px;
