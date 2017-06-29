@@ -143,3 +143,9 @@ header .banner-primary .ip{
 	font-weight: 900;
 	font-size: 46px;
 }
+header .scroll{
+	position: absolute;left:0;bottom: 10px;
+	width: 100%;height: auto;
+	text-align: center;
+	font-size: 23px;
+}
