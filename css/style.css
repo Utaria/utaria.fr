@@ -172,3 +172,23 @@ header .scroll{
 		bottom: 25px;
 	}
 }
+.section{
+	text-align: center;
+}
+.section-primary{
+	border-top: 10px solid #091823;
+}
+.section-primary h1{
+	padding-top: 42px;
+	font-size: 34px;
+	text-transform: uppercase;
+}
+.section-secondary{
+	background-color: #0a1824;
+	margin-top: 405px;
+}
+.section-secondary h1{
+	padding-top: 125px;
+	font-size: 28px;
+	text-transform: uppercase;
+}
