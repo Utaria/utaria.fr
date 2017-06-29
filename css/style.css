@@ -156,8 +156,18 @@ header .scroll{
 	text-align: center;
 	font-size: 23px;
 
-	transition: bottom, 0.2s linear;
+	animation-duration: 1s;
+	animation-name: downup;
+	animation-iteration-count: infinite;
 }
-header .scroll:hover{
-	bottom: 5px;
+@keyframes downup{
+	from{
+		bottom: 15px;
+	}
+	50%{
+		bottom: 5px;
+	}
+	to{
+		bottom: 15px;
+	}
 }
