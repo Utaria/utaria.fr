@@ -135,8 +135,7 @@ header .banner-primary .description{
 header .banner-primary .container-ip{
 	width: 100%;
 	margin-top: 24px;
-	border-top: 4px solid #FFF;
-	border-bottom: 4px solid #FFF;
+	border-top: 4px solid #FFF;border-bottom: 4px solid #FFF;
 }
 header .banner-primary .ip{
 	line-height: 68px;
@@ -148,4 +147,9 @@ header .scroll{
 	width: 100%;height: auto;
 	text-align: center;
 	font-size: 23px;
+
+	transition: bottom, 0.2s linear;
+}
+header .scroll:hover{
+	bottom: 5px;
 }
