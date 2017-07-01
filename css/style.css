@@ -173,10 +173,11 @@ header .scroll{
 	}
 }
 .section{
-	text-align: center;
 	width: 100%;height: auto;
+	text-align: center;
 }
 .section-primary{
+	height: 550px;
 	border-top: 10px solid #091823;
 }
 .section-primary h1{
@@ -184,6 +185,32 @@ header .scroll{
 	font-size: 34px;
 	text-transform: uppercase;
 }
+.section-primary .description{
+	position: relative;
+	width: auto;height: auto;
+}
+.section-primary .description div{
+	text-align: center;
+}
+.section-primary .description img{
+	position: relative;
+	width: 90px;height: 90px;
+	top: 0;
+}
+.section-primary .description .money{
+	position: relative;
+	width: 320px;height: 310px;
+	top: 200px;left: 120px;
+	border: 1px dashed black;
+}
+.section-primary .description .money h1{
+	font-size: 48px;
+	text-transform: uppercase;
+	color: #f1c40f;
+}
+/*.section-primary .description .survival img{
+
+}*/
 .section-secondary{
 	text-align: left;
 	background-color: #0a1824;
@@ -197,10 +224,12 @@ header .scroll{
 }
 .section-secondary .container-txt{
 	position: relative;
-	padding-left: 480px;padding-top: 120px;
+	top: 120px;left: 480px;
+}
+.container-txt{
+	width: 700px;height: auto;
 }
 .section-secondary h1{
-	padding-top: 125px;
 	font-size: 28px;
 	text-transform: uppercase;
 }
