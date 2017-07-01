@@ -176,6 +176,16 @@ header .scroll{
 	width: 100%;height: auto;
 	text-align: center;
 }
+.section .wrap-inner{
+	width: 1200px;
+	margin: auto;
+}
+.section .wrap-inner:after{
+	display: block;
+	position: relative;
+	content: "";
+	clear: both;
+}
 .section-primary{
 	height: 550px;
 	border-top: 10px solid #091823;
@@ -200,7 +210,7 @@ header .scroll{
 .section-primary .description .money{
 	position: relative;
 	width: 320px;height: 310px;
-	top: 200px;left: 120px;
+	/*margin-top: 200px;margin-left: 120px;*/
 	border: 1px dashed black;
 }
 .section-primary .description .money h1{
@@ -214,17 +224,21 @@ header .scroll{
 .section-secondary{
 	text-align: left;
 	background-color: #0a1824;
-	margin-top: 405px;
+	padding: 50px;
 }
 .section-secondary .container-chest{
 	position: relative;
 	width: 300px;height: 300px;
-	top: 50px;left: 130px;
+	float: left;
+	
 	background-color: #26d653;
 }
 .section-secondary .container-txt{
 	position: relative;
-	top: 120px;left: 480px;
+	width: calc(100% - 360px);
+	margin-left: 60px;
+	margin-top: 60px;
+	float: left;
 }
 .container-txt{
 	width: 700px;height: auto;

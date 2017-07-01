@@ -631,7 +631,6 @@ var smoothScrollWithoutHash = function (selector, settings) {
     window.addEventListener('click', clickHandler, false );
 };
 
-// Run our function
 smoothScrollWithoutHash('a[href*="#"]', {
 	speed: 1500,
 	easing: "easeInOutCubic"
