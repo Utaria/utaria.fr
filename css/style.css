@@ -262,14 +262,14 @@ footer .container-description p{
 }
 footer .container-socialnetwork{
 	position: relative;
-	padding-top: 20px;padding-left: 130px;
+	padding-top: 20px;padding-left: 115px;
 }
 footer .container-socialnetwork img{
 	position: relative;
 	width: 40px;height: 40px;
-	/*border-radius: 3px;*/
+	margin-left: 15px;
 }
 footer .container-link a{
 	position: relative;
-	padding-top: 35px;padding-left: 130px;
+	margin-left: 130px;
 }
