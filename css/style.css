@@ -269,7 +269,13 @@ footer .container-socialnetwork img{
 	width: 40px;height: 40px;
 	margin-left: 15px;
 }
-footer .container-link a{
+footer .container-link{
 	position: relative;
-	margin-left: 130px;
+	padding-top: 40px;padding-left: 105px;
+}
+footer .container-link a{
+	margin-left: 25px;
+	font-size: 16px;
+	color: #3294d4;
+	font-family: "Open Sans";
 }
