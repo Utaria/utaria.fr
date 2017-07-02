@@ -195,25 +195,25 @@ header .scroll{
 	font-size: 34px;
 	text-transform: uppercase;
 }
-.section-primary .container-description{
+.section-primary .description{
 	position: relative;
 	width: auto;height: auto;
 }
-.section-primary .container-description div{
+.section-primary .description div{
 	text-align: center;
 }
-.section-primary .container-description img{
+.section-primary .description img{
 	position: relative;
 	width: 90px;height: 90px;
 	top: 0;
 }
-.section-primary .container-description .money{
+.section-primary .description .money{
 	position: relative;
 	width: 320px;height: 310px;
 	/*margin-top: 200px;margin-left: 120px;*/
 	border: 1px dashed black;
 }
-.section-primary .container-description .money h1{
+.section-primary .description .money h1{
 	font-size: 48px;
 	text-transform: uppercase;
 	color: #f1c40f;
@@ -246,30 +246,4 @@ header .scroll{
 .section-secondary h1{
 	font-size: 28px;
 	text-transform: uppercase;
-}
-footer .container-description{
-	position: relative;
-	padding-left: 130px;
-}
-footer .container-description img{
-	position: relative;
-	padding-top: 35px;
-}
-footer .container-description p{
-	text-align: left;
-	padding-top: 20px;
-	font-size: 18px;
-}
-footer .container-socialnetwork{
-	position: relative;
-	padding-top: 20px;padding-left: 130px;
-}
-footer .container-socialnetwork img{
-	position: relative;
-	width: 40px;height: 40px;
-	/*border-radius: 3px;*/
-}
-footer .container-link a{
-	position: relative;
-	padding-top: 35px;padding-left: 130px;
 }
