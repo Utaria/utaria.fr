@@ -1,3 +1,6 @@
+/**
+ *	Règles générales
+ */
 *{
 	margin: 0;
 	padding: 0;
@@ -19,6 +22,21 @@ body{
 	overflow: auto;
 }
 a{text-decoration: none;color: #FFF;}
+
+.wrap-inner{
+	width: 1200px;
+	margin: auto;
+}
+.wrap-inner:after{
+	display: block;
+	position: relative;
+	content: "";
+	clear: both;
+}
+
+/**
+ * 	Partie haute de la page
+ */
 header{
 	display: block;
 	position: relative;
@@ -172,19 +190,13 @@ header .scroll{
 		bottom: 25px;
 	}
 }
+
+/**
+ * 	Contenu de la page
+ */
 .section{
 	width: 100%;height: auto;
 	text-align: center;
-}
-.section .wrap-inner{
-	width: 1200px;
-	margin: auto;
-}
-.section .wrap-inner:after{
-	display: block;
-	position: relative;
-	content: "";
-	clear: both;
 }
 .section-primary{
 	height: 550px;
@@ -247,9 +259,12 @@ header .scroll{
 	font-size: 28px;
 	text-transform: uppercase;
 }
-footer .container-description{
-	position: relative;
-	padding-left: 130px;
+
+/**
+ * 	Partie basse de la page
+ */
+footer{
+	background: #1A1A1A;
 }
 footer .container-description img{
 	position: relative;
@@ -259,22 +274,25 @@ footer .container-description p{
 	text-align: left;
 	padding-top: 20px;
 	font-size: 18px;
+	font-family: "Open Sans";
+	
+	color: #C9C9C9;
 }
 footer .container-socialnetwork{
 	position: relative;
-	padding-top: 20px;padding-left: 115px;
+	padding-top: 20px;
 }
 footer .container-socialnetwork img{
 	position: relative;
-	width: 40px;height: 40px;
-	margin-left: 15px;
+	width: 36px;height: 36px;
+	margin-right: 15px;
 }
 footer .container-link{
 	position: relative;
-	padding-top: 20px;padding-bottom: 10px;padding-left: 105px;
+	padding-top: 30px;padding-bottom: 15px;
 }
 footer .container-link a{
-	margin-left: 25px;
+	margin-right: 25px;
 	font-size: 16px;
 	color: #3294d4;
 	font-family: "Open Sans";
