@@ -330,6 +330,15 @@ footer .container-link a{
 footer .container-link a:hover{
 	text-decoration: underline;
 }
+footer .container-pagination{
+	position: relative;
+	width: auto;height: auto;
+	text-align: left;
+	font-size: 18px;
+}
+footer .container-pagination a{
+	/**/
+}
 
 @keyframes shake {
 	10%, 90%      { transform: translate3d(-0.25px, 0, 0); }
