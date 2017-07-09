@@ -34,6 +34,10 @@
 	<body>
 
 		<header class="header">
+
+			<div id="particles-js" class="particle-container">
+				<canvas class="particles-js-canvas-el"></canvas>
+			</div>
 			
 			<nav class="nav nav-header">
 
@@ -157,6 +161,9 @@
 			</div>
 		</footer>
 
+		<script type="text/javascript" src="js/particle.js"></script>
 		<script type="text/javascript" src="js/scroll.js"></script>
+
+		<script>particlesJS.load('particles-js', 'js/particles-conf.json', function() {});</script>
 	</body>
 </html>
