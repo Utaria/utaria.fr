@@ -283,7 +283,7 @@ header .scroll{
 	padding-top: 0;
 }
 .section-primary .container-description p{
-	font-size: 30px;
+	font-size: 26px;
 }
 .section-primary .container-description .money{
 	position: relative;
@@ -320,10 +320,13 @@ header .scroll{
 }
 .section-secondary .container-chest{
 	position: relative;
-	width: 300px;height: 300px;
+	width: 250px;height: 250px;
 	float: left;
 
-	background-color: #26d653;
+}
+.section-secondary .container-chest img{
+	width: 100%;
+	height: 100%;
 }
 .section-secondary .container-txt{
 	position: relative;
@@ -385,14 +388,10 @@ footer .container-link{
 	position: relative;
 	padding-top: 30px;padding-bottom: 15px;
 }
-footer .container-link a{
-	margin-right: 25px;
-	font-size: 16px;
-	color: #3294d4;
-	font-family: "Open Sans", sans-serif;
-}
-footer .container-link a:hover{
-	text-decoration: underline;
+footer .page-facebook{
+	margin-top: 20px;
+	margin-left: 890px;
+	/*MODIF A FAIRE*/
 }
 footer .container-pagination {
 	position: relative;
@@ -411,6 +410,15 @@ footer .container-pagination a {
 }
 footer .container-pagination a:hover {
     text-decoration: underline;
+}
+footer .container-link a{
+	margin-right: 25px;
+	font-size: 16px;
+	color: #3294d4;
+	font-family: "Open Sans", sans-serif;
+}
+footer .container-link a:hover{
+	text-decoration: underline;
 }
 
 @keyframes shake {
