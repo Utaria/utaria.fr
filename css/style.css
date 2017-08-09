@@ -16,7 +16,7 @@ body, html{
 }
 body{
 	color: #FFF;
-	font-family: "Lato", sans-serif;
+    font-family: "Lato", sans-serif;
 	font-size: 20px;
 	background-color: #0c1c29;
 	overflow: auto;
@@ -32,6 +32,13 @@ a{text-decoration: none;color: #FFF;}
 	position: relative;
 	content: "";
 	clear: both;
+}
+.wrap-inner .row {
+	float: left;
+	margin: 0;
+}
+.wrap-inner .row-3 {
+	width: 400px;
 }
 
 /**
@@ -52,7 +59,7 @@ header{
 header:before {
 	display: block;
 	position: absolute;
-	
+
 	left: 0;right: 0;bottom: 0;top: 0;
 	content: " ";
 
@@ -67,8 +74,7 @@ header .particle-container {
 }
 header .particle-container canvas {
 	width: 100%;height: 100%;
-}
-
+} 
 header section.upper {
 	display: block;position: relative;
 	width: 100%;height: 70px;
@@ -76,13 +82,11 @@ header section.upper {
     background: #2e3842;
 }
 
-header section.upper .nav-header{
-    display: block;
-    position: relative;
-    float: right;
-    width: auto;
-    height: 45px;
-    margin: 12px 0;
+header section.upper.nav-header{
+	display: block;
+	position: relative;
+	float: right;width: auto;height: 45px;
+	margin: 12px 0;
 }
 
 header section.upper .btn {
@@ -129,7 +133,7 @@ header .btn {
 	font-weight: 700;
 	border-radius: 2px;
 	white-space: nowrap;
-	line-height: 38px;padding-left: 12px;padding-right: 12px;
+	line-height: 43px;padding-left: 18px;padding-right: 18px;
 	margin-left: 16px;
 }
 header .btn a{
@@ -187,6 +191,7 @@ header .btn-secondary:hover{
 }
 */
 header .banner-primary{
+
 	width: 430px;height: 250px;
 	text-align: center;
 
@@ -209,20 +214,64 @@ header .banner-primary .description{
 	font-size: 23px;
 	text-transform: uppercase;
 }
-header .banner-primary .container-ip{
+header .banner-primary .container-ip {
+    position: relative;
 	width: 100%;
+    height: 68px;
 	margin-top: 24px;
-	border-top: 4px solid #FFF;border-bottom: 4px solid #FFF;
+	/* border-top: 4px solid #FFF;
+	border-bottom: 4px solid #FFF; */
 }
-header .banner-primary .ip{
+header .banner-primary .container-ip:before,
+header .banner-primary .container-ip:after {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    content: " ";
+
+    transform-origin: 50% 50%;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+header .banner-primary .container-ip:before{
+    animation: animiptop 1.5s ease-in-out forwards,
+               animfinip 1s ease-in-out 2.0s forwards;
+
+    top: 0;
+    left: 0;
+
+    border-top: 4px solid #FFF;
+    border-right: 4px solid #FFF;
+}
+header .banner-primary .container-ip:after{
+    animation: animipbottom 1.5s ease-in-out forwards,
+               animfinip 1s ease-in-out 2.0s forwards;
+
+    bottom: 0;
+    right: 0;
+
+    border-bottom: 4px solid #FFF;
+    border-left: 4px solid #FFF;
+}
+
+header .banner-primary .ip {
+    display: block;
+    position: relative;
 	line-height: 68px;
 	font-weight: 900;
 	font-size: 46px;
 
-	transition: font-size, 0.1s linear;
+    cursor: pointer;
+    transform: scale(0);
+
+    animation: ipappears .8s ease-in-out 1s forwards;
 }
 header .banner-primary .container-ip:hover .ip{
-	font-size: 55px;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
 }
 header .scroll{
 	position: absolute;left:0;bottom: 20px;
@@ -279,7 +328,7 @@ header .scroll{
 	padding-top: 0;
 }
 .section-primary .container-description p{
-	font-size: 30px;
+	font-size: 26px;
 }
 .section-primary .container-description .money{
 	position: relative;
@@ -316,10 +365,13 @@ header .scroll{
 }
 .section-secondary .container-chest{
 	position: relative;
-	width: 300px;height: 300px;
+	width: 250px;height: 250px;
 	float: left;
-	
-	background-color: #26d653;
+
+}
+.section-secondary .container-chest img{
+	width: 100%;
+	height: 100%;
 }
 .section-secondary .container-txt{
 	position: relative;
@@ -342,16 +394,20 @@ header .scroll{
 footer{
 	background: #1A1A1A;
 }
+footer .wrap-inner .row-3 {
+	padding-top: 35px;
+}
+footer .wrap-inner .row-3:nth-child(1) {
+	width: 465px;
+}
 footer .container-description img{
 	position: relative;
-	padding-top: 35px;
 }
 footer .container-description p{
 	text-align: left;
 	padding-top: 20px;
 	font-size: 18px;
-	font-family: "Open Sans", sans-serif;
-	
+    font-family: "Open Sans", sans-serif;
 	color: #C9C9C9;
 }
 footer .container-socialnetwork{
@@ -376,6 +432,29 @@ footer .container-link{
 	position: relative;
 	padding-top: 30px;padding-bottom: 15px;
 }
+footer .page-facebook{
+	margin-top: 20px;
+	margin-left: 890px;
+	/*MODIF A FAIRE*/
+}
+footer .container-pagination {
+	position: relative;
+	text-align: left;
+
+	font-size: 16px;
+	font-family: "Open Sans", sans-serif;
+
+	margin-left: 35px;
+	margin-top: 20px;
+}
+footer .container-pagination a {
+	display: block;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+footer .container-pagination a:hover {
+    text-decoration: underline;
+}
 footer .container-link a{
 	margin-right: 25px;
 	font-size: 16px;
@@ -385,21 +464,31 @@ footer .container-link a{
 footer .container-link a:hover{
 	text-decoration: underline;
 }
-footer .container-pagination{
-	position: relative;
-	width: auto;height: auto;
-	text-align: left;
-	font-size: 18px;
-}
-footer .container-pagination a{
-	/**/
-}
 
 @keyframes shake {
 	10%, 90%      { transform: translate3d(-0.25px, 0, 0); }
 	20%, 80%      { transform: translate3d( 1px, 0, 0); }
 	30%, 50%, 70% { transform: translate3d(-2px, 0, 0); }
 	40%, 60%      { transform: translate3d( 2px, 0, 0); }
+}
+
+@keyframes animiptop {
+    0% { width: 0; height: 0; }
+    80% { width: 100%; height: 0; }
+    100% { width: 100%; height: 100%; }
+}
+@keyframes animipbottom {
+    0% { width: 0; height: 0; }
+    80% { width: 100%; height: 0; }
+    100% { width: 100%; height: 100%; }
+}
+@keyframes animfinip {
+    0% { height: 100%; }
+    100% { height: 30%; }
+}
+@keyframes ipappears {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
 }
 
 @keyframes bgheader {
