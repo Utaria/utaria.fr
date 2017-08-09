@@ -34,17 +34,23 @@ section blockquote{
 	background-color: #F5F5F5;
 	padding: 15px;
 	line-height: 1.2em;
+	border-left: 4px solid #2e3842;
+	margin: 15px;
 }
 section blockquote.info{
-	border-left: 4px solid #2e3842;
+	color: #FFF;
+	background-color: #3498db;
+	border-left: none;
 }
 section blockquote.warning{
 	color: #FFF;
 	background-color: #f39c12;
+	border-left: none;
 }
 section blockquote.important{
 	color: #FFF;
 	background-color: #e74c3c;
+	border-left: none;
 }
 
 section blockquote .command{
