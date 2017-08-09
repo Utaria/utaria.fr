@@ -400,13 +400,19 @@ footer .wrap-inner .row-3 {
 footer .wrap-inner .row-3:nth-child(1) {
 	width: 465px;
 }
+footer .wrap-inner .row-3:nth-child(2) {
+	width: 350px;
+}
+footer .wrap-inner .row-3:nth-child(3) {
+	width: 385px;
+}
 footer .container-description img{
 	position: relative;
 }
 footer .container-description p{
 	text-align: left;
 	padding-top: 20px;
-	font-size: 18px;
+	font-size: 17px;
     font-family: "Open Sans", sans-serif;
 	color: #C9C9C9;
 }
@@ -432,11 +438,6 @@ footer .container-link{
 	position: relative;
 	padding-top: 30px;padding-bottom: 15px;
 }
-footer .page-facebook{
-	margin-top: 20px;
-	margin-left: 890px;
-	/*MODIF A FAIRE*/
-}
 footer .container-pagination {
 	position: relative;
 	text-align: left;
@@ -450,14 +451,14 @@ footer .container-pagination {
 footer .container-pagination a {
 	display: block;
     margin-top: 6px;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
 }
 footer .container-pagination a:hover {
     text-decoration: underline;
 }
 footer .container-link a{
 	margin-right: 25px;
-	font-size: 16px;
+	font-size: 15px;
 	color: #3294d4;
 	font-family: "Open Sans", sans-serif;
 }
