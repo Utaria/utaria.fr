@@ -30,15 +30,29 @@ section.container-link div.category{
 	float: left;
 }
 /*article.html*/
-section blockquote.info{
-	border-left: 4px solid #2e3842;
+section blockquote{
 	background-color: #F5F5F5;
 	padding: 15px;
 	line-height: 1.2em;
 }
+section blockquote.info{
+	border-left: 4px solid #2e3842;
+}
+section blockquote.warning{
+	color: #FFF;
+	background-color: #f39c12;
+}
+section blockquote.important{
+	color: #FFF;
+	background-color: #e74c3c;
+}
+
 section blockquote .command{
+	position: relative;
+	display: inline-block;
 	background-color: lightgray;
 	border-radius: 3px;
 	font-weight: bold;
 	padding: 3px;
+	color: black;
 }
