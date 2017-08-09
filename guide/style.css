@@ -29,3 +29,16 @@ section.container-link div.category{
 	
 	float: left;
 }
+/*article.html*/
+section blockquote.info{
+	border-left: 4px solid #2e3842;
+	background-color: #F5F5F5;
+	padding: 15px;
+	line-height: 1.2em;
+}
+section blockquote .command{
+	background-color: lightgray;
+	border-radius: 3px;
+	font-weight: bold;
+	padding: 3px;
+}
