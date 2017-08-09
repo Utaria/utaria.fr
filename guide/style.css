@@ -1,0 +1,24 @@
+body{
+	background-color: #FFF;
+	color: black;
+}
+section.container-top{
+	height: 220px;width: 100%;
+	background-color: #e6e6e6;
+	text-align: center;
+}
+.container-top h2{
+	padding-top: 25px;
+	font-size: 52px;
+}
+.container-top p{
+	padding-top: 20px;
+	font-size: 27px;
+}
+section.container-link div{
+	position: relative;
+	width: 240px;height: 240px;
+	top: 80px;
+	left: 160px;
+	border: 2px dashed gray;
+}
