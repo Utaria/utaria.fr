@@ -16,7 +16,7 @@ body, html{
 }
 body{
 	color: #FFF;
-	font-family: "Lato";
+	font-family: "Lato", sans-serif;
 	font-size: 20px;
 	background-color: #0c1c29;
 	overflow: auto;
@@ -40,7 +40,7 @@ a{text-decoration: none;color: #FFF;}
 header{
 	display: block;
 	position: relative;
-	
+
 	background-image: url(../img/bg.jpg);
 	-webkit-background-size: cover;
 	     -o-background-size: cover;
@@ -55,44 +55,88 @@ header:before {
 	
 	left: 0;right: 0;bottom: 0;top: 0;
 	content: " ";
-	
-	background: rgba(0, 0, 0, 0.4);
+
+    background-color: #2e3842;
+    animation: bgheader 1s ease-in-out .5s forwards;
 }
 header .particle-container {
 	position: absolute;display: block;
 	width: 100%;height: 100%;
 	top: 0;left: 0;bottom: 0;right: 0;
-	z-index: 0;
+	z-index: -1;
 }
 header .particle-container canvas {
 	width: 100%;height: 100%;
-} 
-header .nav-header{
-	display: block;
-	position: relative;
-	width: auto;height: 45px;
-	margin-right: 55px;
-	float: right;
-	margin-top: 40px;
-	z-index: 1;
 }
+
+header section.upper {
+	display: block;position: relative;
+	width: 100%;height: 70px;
+
+    background: #2e3842;
+}
+
+header section.upper .nav-header{
+    display: block;
+    position: relative;
+    float: right;
+    width: auto;
+    height: 45px;
+    margin: 12px 0;
+}
+
+header section.upper .btn {
+    display: block;
+    position: relative;
+
+    float: left;
+
+    padding:0 18px;
+    height: 45px;
+    margin-right: 1px;
+
+    background: rgba(255,255,255,0.1);
+
+    color: white;cursor: pointer;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 45px;
+
+    -webkit-transition: background .2s ease-in;
+    -moz-transition: background .2s ease-in;
+    -ms-transition: background .2s ease-in;
+    -o-transition: background .2s ease-in;
+    transition: background .2s ease-in;
+}
+header section.upper .btn .fa {
+    padding-right: 5px;
+}
+header section.upper .btn-primary {
+    background: #F1C40F;
+    text-shadow: 0 0 4px rgba(0, 0, 0, .25);
+
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+/*
 header .btn {
 	display: block;position: relative;
 	width: auto;height: 100%;
 	float: right;
 	text-align: center;
-	font-size: 18px;
+	font-size: 17px;
 	font-weight: 700;
 	border-radius: 2px;
 	white-space: nowrap;
-	line-height: 43px;padding-left: 18px;padding-right: 18px; 
+	line-height: 38px;padding-left: 12px;padding-right: 12px;
 	margin-left: 16px;
 }
 header .btn a{
 	padding-top: auto;
 }
 header .btn i{
-	font-size: 25px;
+	font-size: 22px;
 	padding-right: 10px;
 }
 header .btn .fa-thumbs-up{
@@ -141,9 +185,9 @@ header .btn-primary:hover{
 header .btn-secondary:hover{
 	background-color: transparent;
 }
+*/
 header .banner-primary{
-	margin: auto;
-	width: 395px;height: 250px;
+	width: 430px;height: 250px;
 	text-align: center;
 
 	position:absolute;
@@ -152,16 +196,18 @@ header .banner-primary{
 	margin:-125px 0 0 -197.5px;
 }
 header .banner-primary img{
-	width: 100%;
-	height: 75px;
+	width: 395px;
+	height: 77px;
 }
 header .banner-primary label{
 	white-space: nowrap;
 }
 header .banner-primary .description{
-	color: #c9c9c9;
-	letter-spacing: .01em;
-	font-size: 28px;
+	color: #EEEEEE;
+	letter-spacing: .1em;
+    text-align: center;
+	font-size: 23px;
+	text-transform: uppercase;
 }
 header .banner-primary .container-ip{
 	width: 100%;
@@ -304,7 +350,7 @@ footer .container-description p{
 	text-align: left;
 	padding-top: 20px;
 	font-size: 18px;
-	font-family: "Open Sans";
+	font-family: "Open Sans", sans-serif;
 	
 	color: #C9C9C9;
 }
@@ -334,7 +380,7 @@ footer .container-link a{
 	margin-right: 25px;
 	font-size: 16px;
 	color: #3294d4;
-	font-family: "Open Sans";
+	font-family: "Open Sans", sans-serif;
 }
 footer .container-link a:hover{
 	text-decoration: underline;
@@ -354,4 +400,9 @@ footer .container-pagination a{
 	20%, 80%      { transform: translate3d( 1px, 0, 0); }
 	30%, 50%, 70% { transform: translate3d(-2px, 0, 0); }
 	40%, 60%      { transform: translate3d( 2px, 0, 0); }
+}
+
+@keyframes bgheader {
+    0% { background-color: #2e3842; }
+    100% { background-color: rgba(0, 0, 0, 0.5); }
 }
