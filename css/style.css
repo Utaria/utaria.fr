@@ -47,34 +47,9 @@ a{text-decoration: none;color: #FFF;}
 header{
 	display: block;
 	position: relative;
-
-	background-image: url(../img/bg.jpg);
-	-webkit-background-size: cover;
-	     -o-background-size: cover;
-	        background-size: cover;
-
-	width: 100%;height: 100%;
-	margin: 0;padding: 0;
+	
+	height: 112px;width: 100%;
 }
-header:before {
-	display: block;
-	position: absolute;
-
-	left: 0;right: 0;bottom: 0;top: 0;
-	content: " ";
-
-    background-color: #2e3842;
-    animation: bgheader 1s ease-in-out .5s forwards;
-}
-header .particle-container {
-	position: absolute;display: block;
-	width: 100%;height: 100%;
-	top: 0;left: 0;bottom: 0;right: 0;
-	z-index: -1;
-}
-header .particle-container canvas {
-	width: 100%;height: 100%;
-} 
 header section.upper {
 	display: block;position: relative;
 	width: 100%;height: 70px;
@@ -82,10 +57,21 @@ header section.upper {
     background: #2e3842;
 }
 
-header section.upper.nav-header{
+header section.upper .logo {
+	display: block;position: relative;
+	width: auto;height: 100%;
+	
+	float: left;
+}
+header section.upper .logo img {
+	height: 42px;
+	margin-top: 15px;
+}
+
+header section.upper nav.navigation-header{
 	display: block;
 	position: relative;
-	float: right;width: auto;height: 45px;
+	float: right;
 	margin: 12px 0;
 }
 
@@ -97,9 +83,9 @@ header section.upper .btn {
 
     padding:0 18px;
     height: 45px;
-    margin-right: 1px;
+    margin-right: 5px;
 
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, .1);
 
     color: white;cursor: pointer;
     font-family: "Open Sans", sans-serif;
@@ -123,74 +109,106 @@ header section.upper .btn-primary {
     text-transform: uppercase;
 }
 
-/*
-header .btn {
+header section.upper .btn:hover {
+	background: rgba(255, 255, 255, .3);
+}
+header section.upper .btn-primary:hover {
+	background: #e0b61f;
+}
+header section.upper .btn-secondary:hover {
+	/*background: rgb(41, 128, 185);*/
+}
+header section.upper .btn .fa-thumbs-up {
+	position: relative;
+	right: 0;
+	-webkit-transition: .2s ease-in-out;
+	   -moz-transition: .2s ease-in-out;
+	    -ms-transition: .2s ease-in-out;
+	     -o-transition: .2s ease-in-out;
+	        transition: .2s ease-in-out;
+}
+header section.upper .btn:hover .fa-thumbs-up {
+	transform: rotate(-30deg) scale(1.15);
+	right: 3px;
+}
+
+header section.lower {
+	display: block;position: relative;
+	width: 100%;height: 42px;
+	
+	background: rgb(41, 128, 185);
+	/*background: #20272d;*/
+}
+header section.lower nav.sub-nav {
 	display: block;position: relative;
 	width: auto;height: 100%;
 	float: right;
-	text-align: center;
-	font-size: 17px;
-	font-weight: 700;
-	border-radius: 2px;
-	white-space: nowrap;
-	line-height: 43px;padding-left: 18px;padding-right: 18px;
-	margin-left: 16px;
 }
-header .btn a{
-	padding-top: auto;
-}
-header .btn i{
-	font-size: 22px;
-	padding-right: 10px;
-}
-header .btn .fa-thumbs-up{
-	transform: rotate(-20deg);
-	transition: transform,color, 0.3s linear;
-}
-header .btn .fa-shopping-cart{
-	transition: color, 0.3s linear;
-}
-header .btn:hover .fa-thumbs-up{
-	transform: rotate(0deg);
-	color: #2980b9;
-}
-header .btn:hover .fa-shopping-cart{
-	color: #f1c40f;
-}
-header .btn-default{
-	background-color: transparent;
-	border: 2px solid #FFF;
+header section.lower nav.sub-nav a {
+	display: block;position: relative;
+	width: auto;height: 100%;
+	float: left;
+	
+	line-height: 42px;
 
-	transition: background-color, 0.3s linear;
-    -webkit-transition: background-color, 0.3s linear;
+	font-family: "Open Sans", sans-serif;
+	font-size: 16px;
+	
+	padding: 0 15px;
+	
+	-webkit-transition: ease-out .2s;
+	   -moz-transition: ease-out .2s;
+	    -ms-transition: ease-out .2s;
+	     -o-transition: ease-out .2s;
+	        transition: ease-out .2s;
 }
-header .btn-primary{
-	background-color: #f1c40f;
-	border: 2px solid #f1c40f;
-	color: #000000;
-	transition: background-color, 0.3s linear;
-    -webkit-transition: background-color,color, 0.3s linear;
+header section.lower nav.sub-nav a:hover {
+	background: rgba(0, 0, 0, 0.1);
 }
-header .btn-secondary{
-	background-color: #2980b9;
-	border: 2px solid #2980b9;
 
-	transition: background-color, 0.3s linear;
-    -webkit-transition: background-color, 0.3s linear;
+
+section.section-description {
+	display: block;position: relative;
+	
+	background-image: url(../img/bg.jpg);
+	-webkit-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+	
+	width: 100%;height: calc(100% - 112px);
+	margin: 0;padding: 0;
 }
-header .btn-default:hover{
-	background-color: rgba(255, 255, 255, 1);
-	color: #000;
+section.section-description:before {
+	display: block;
+	position: absolute;
+
+	left: 0;right: 0;bottom: 0;top: 0;
+	content: " ";
+
+    background-color: #2e3842;
+    animation: bgheader 1s ease-in-out .5s forwards;
 }
-header .btn-primary:hover{
-	background-color: transparent;
-	color: #FFF;
+section.section-description:after {
+	display: block;
+	position: absolute;
+
+	left: 0;right: 0;bottom: 0;top: 0;
+	content: " ";
+	height: 5px;width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.12);
 }
-header .btn-secondary:hover{
-	background-color: transparent;
+
+section.section-description .particle-container {
+	position: absolute;display: block;
+	width: 100%;height: 100%;
+	top: 0;left: 0;bottom: 0;right: 0;
 }
-*/
-header .banner-primary{
+section.section-description .particle-container canvas {
+	width: 100%;height: 100%;
+} 
+
+section.section-description .banner-primary{
 
 	width: 430px;height: 250px;
 	text-align: center;
@@ -200,21 +218,21 @@ header .banner-primary{
 	top:50%;
 	margin:-125px 0 0 -197.5px;
 }
-header .banner-primary img{
+section.section-description .banner-primary img{
 	width: 395px;
 	height: 77px;
 }
-header .banner-primary label{
+section.section-description .banner-primary label{
 	white-space: nowrap;
 }
-header .banner-primary .description{
+section.section-description .banner-primary .description{
 	color: #EEEEEE;
 	letter-spacing: .1em;
     text-align: center;
 	font-size: 23px;
 	text-transform: uppercase;
 }
-header .banner-primary .container-ip {
+section.section-description .banner-primary .container-ip {
     position: relative;
 	width: 100%;
     height: 68px;
@@ -222,8 +240,8 @@ header .banner-primary .container-ip {
 	/* border-top: 4px solid #FFF;
 	border-bottom: 4px solid #FFF; */
 }
-header .banner-primary .container-ip:before,
-header .banner-primary .container-ip:after {
+section.section-description .banner-primary .container-ip:before,
+section.section-description .banner-primary .container-ip:after {
     display: block;
     position: absolute;
     width: 0;
@@ -236,7 +254,7 @@ header .banner-primary .container-ip:after {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-header .banner-primary .container-ip:before{
+section.section-description .banner-primary .container-ip:before{
     animation: animiptop 1.5s ease-in-out forwards,
                animfinip 1s ease-in-out 2.0s forwards;
 
@@ -246,7 +264,7 @@ header .banner-primary .container-ip:before{
     border-top: 4px solid #FFF;
     border-right: 4px solid #FFF;
 }
-header .banner-primary .container-ip:after{
+section.section-description .banner-primary .container-ip:after{
     animation: animipbottom 1.5s ease-in-out forwards,
                animfinip 1s ease-in-out 2.0s forwards;
 
@@ -257,7 +275,7 @@ header .banner-primary .container-ip:after{
     border-left: 4px solid #FFF;
 }
 
-header .banner-primary .ip {
+section.section-description .banner-primary .ip {
     display: block;
     position: relative;
 	line-height: 68px;
@@ -269,11 +287,11 @@ header .banner-primary .ip {
 
     animation: ipappears .8s ease-in-out 1s forwards;
 }
-header .banner-primary .container-ip:hover .ip{
+section.section-description .banner-primary .container-ip:hover .ip{
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
 }
-header .scroll{
+section.section-description .scroll{
 	position: absolute;left:0;bottom: 20px;
 	width: 100%;height: auto;
 	text-align: center;
@@ -438,18 +456,18 @@ footer .container-link{
 	position: relative;
 	padding-top: 30px;padding-bottom: 15px;
 }
-footer .container-pagination {
+footer ul.container-pagination {
 	position: relative;
 	text-align: left;
 
 	font-size: 16px;
 	font-family: "Open Sans", sans-serif;
+	list-style: none;
 
 	margin-left: 35px;
 	margin-top: 20px;
 }
-footer .container-pagination a {
-	display: block;
+footer .container-pagination li {
     margin-top: 6px;
     margin-bottom: 12px;
 }
