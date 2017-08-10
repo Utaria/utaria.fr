@@ -68,6 +68,25 @@ header section.upper .logo img {
 	margin-top: 15px;
 }
 
+header section.upper .players {
+	display: block;position: relative;
+	width: auto;height: 100%;
+	line-height: 70px;
+	
+	float: left;
+	margin-left: 30px;
+	
+	color: #999;
+	font-size: 16px;
+}
+header section.upper .players .online {
+	font-weight: bold;
+	color: #2ECC71;
+}
+header section.upper .players span {
+	color: #BBB;
+}
+
 header section.upper nav.navigation-header{
 	display: block;
 	position: relative;
@@ -164,6 +183,9 @@ header section.lower nav.sub-nav a {
 }
 header section.lower nav.sub-nav a:hover {
 	background: rgba(0, 0, 0, 0.1);
+}
+header section.lower nav.sub-nav a i.fa-caret-down {
+	padding-left: 3px;
 }
 
 
