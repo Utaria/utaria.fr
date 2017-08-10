@@ -29,13 +29,18 @@ section.container-link div.category{
 	
 	float: left;
 }
+.category.sub{
+	float: none;
+	width: 100%;
+	margin: 30px 0;
+}
 /*article.html*/
 section blockquote{
 	background-color: #F5F5F5;
 	padding: 15px;
 	line-height: 1.2em;
 	border-left: 4px solid #2e3842;
-	margin: 15px;
+	margin: 15px 0;
 }
 section blockquote.info{
 	color: #FFF;
@@ -68,7 +73,6 @@ section blockquote .command{
 	color: #FFF;
 	font-size: 40px;
 	font-weight: bold;
-	padding-left: 40px;
 	line-height: 120px;
 }
 .separator h3{
