@@ -34,7 +34,7 @@
         <section class="upper">
             <div class="wrap-inner">
                 <div class="logo">
-                   <?= $Html->img("logo.png") ?>
+                   <?= $Html->link("", $Html->img("logo.png")) ?>
                 </div>
                 <div class="players">
                     <span class="online">En ligne.</span> <span>13/50</span> joueurs connectés

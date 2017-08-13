@@ -1,6 +1,8 @@
 <?php
 namespace core\Helper;
 
+use Core\Config;
+
 class Html {
 
     public function css($file) {
@@ -33,7 +35,9 @@ class Html {
 
     public function href($link) {
         $out  = filter_var($link, FILTER_VALIDATE_URL);
-        $href = ($out) ? $link : BASE_URL . '/' . $link;
+
+        $internalLink = (Config::getInstance()->getValue("useURI")) ? 'public/?uri=' . $link : $link;
+        $href         = ($out) ? $link : BASE_URL . '/' . $internalLink;
 
         return $href;
     }

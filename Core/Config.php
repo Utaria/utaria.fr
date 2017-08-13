@@ -1,6 +1,8 @@
 <?php
 namespace Core;
 
+use Core\Exception\MissingConfigException;
+
 class Config {
 
 	private static $_instance;
@@ -14,7 +16,8 @@ class Config {
 		if (file_exists($configFile)) {
 			require $configFile;
 			$this->data = (isset($config)) ? $config : array();
-		}
+		} else
+		    throw new MissingConfigException([]);
 	}
 
 

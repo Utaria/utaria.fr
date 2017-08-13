@@ -2,8 +2,8 @@
 define('DS'      , DIRECTORY_SEPARATOR);
 define('APP'     , dirname(__FILE__));
 define('ROOT'    , dirname(APP));
-define('CORE'    , ROOT.DS.'core');
-define('BASE_URL', dirname(dirname($_SERVER['SCRIPT_NAME'])));
+define('CORE'    , ROOT.DS.'Core');
+define('BASE_URL', rtrim(dirname(dirname($_SERVER['SCRIPT_NAME'])), DS));
 
 use Core\Config;
 use Core\Database\MySQLDatabase;

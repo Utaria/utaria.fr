@@ -1,6 +1,7 @@
 <?php
 namespace Core\Routing;
 
+use Core\Config;
 use Core\Exception\UnknownControllerException;
 
 class Dispatcher {
@@ -24,9 +25,22 @@ class Dispatcher {
 	    $ctrl = ucfirst($this->request->controller);
 		$name = "\App\Controller\\{$ctrl}Controller";
 
-		// Si le controller n'existe pas, on lance une erreur
-		if (!file_exists(ROOT . str_replace('\\', DS, $name) . '.php'))
-		    throw new UnknownControllerException(["Controller" => $ctrl]);
+		// Si le controller n'existe pas, on lance une erreur !
+		if (!file_exists(ROOT . str_replace('\\', DS, $name) . '.php')) {
+            $devMode = Config::getInstance()->getValue("devMode");
+
+            // On lance dans ce cas une erreur 404 simple.
+            if (!$devMode) {
+                $customName = Config::getInstance()->getValue("customErrorController");
+                $name       = (!empty($customName)) ? $customName : "ErrorController";
+
+                $name = "\App\Controller\\$name";
+                $this->request->action = "error404";
+            } else {
+                echo("Mode développeur actif. Nous vous informons des erreurs. <br>");
+                throw new UnknownControllerException(["Controller" => $ctrl]);
+            }
+        }
 
 		return new $name();
 	}
