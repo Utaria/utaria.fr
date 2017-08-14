@@ -58,6 +58,10 @@ class MySQLDatabase extends Database {
 		return $datas;
 	}
 
+	public function execute($statement, $attributes) {
+		$req = $this->getPDO()->prepare($statement);
+		return $req->execute($attributes);
+	}
 
 
 	public static function newInstance($dbConfig) {

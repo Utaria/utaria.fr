@@ -33,7 +33,7 @@ class Controller {
 			}
 
 			$table_classpath = '\App\Table\\' . $this->table_class;
-			$this->table = new $table_classpath(\App::getDb());
+			$this->table = new $table_classpath(\App::getInstance()->getDb());
 		}
 	}
 

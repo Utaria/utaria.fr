@@ -11,25 +11,53 @@ use Core\Routing\Dispatcher;
 
 class App {
 
-	private static $_dbInstance;
+	private static $_instance;
+
+	private $db;
 
 
-	public static function load() {
+	public function __construct() {
 		require CORE . DS . 'Autoloader.php';
 		require  APP . DS . 'Autoloader.php';
 
 		Core\Autoloader::register();
 		App\Autoloader::register();
+	}
 
+	public function load() {
 		new Dispatcher();
 	}
 
+	public function getDb() {
+		if (is_null($this->db))
+			$this->db = MySQLDatabase::newInstance(Config::getInstance()->getDbConfig());
 
-	public static function getDb() {
-		if (is_null(self::$_dbInstance))
-			self::$_dbInstance = MySQLDatabase::newInstance(Config::getInstance()->getDbConfig());
+		return $this->db;
+	}
 
-		return self::$_dbInstance;
+	public function notFound() {
+		$customName = Config::getInstance()->getValue("customErrorController");
+		$ctrlName   = (!empty($customName)) ? $customName : "ErrorController";
+		$ctrlName   = "\App\Controller\\$ctrlName";
+
+		header("HTTP/1.0 404 Not Found");
+		$ctrl = new $ctrlName();
+		$ctrl->error404();
+		
+		die();
+	}
+
+	public function getTable($name) {
+		$class_name = '\\App\\Table\\' . ucfirst($name) . 'Table';
+		return new $class_name($this->getDb());
+	}
+
+
+	public static function getInstance() {
+		if (is_null(self::$_instance))
+			self::$_instance = new App();
+
+		return self::$_instance;
 	}
 
 }

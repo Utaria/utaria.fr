@@ -18,7 +18,7 @@ body{
 	color: #FFF;
     font-family: "Lato", sans-serif;
 	font-size: 20px;
-	background-color: #0c1c29;
+	background-color: #F5F6F9;
 	overflow: auto;
 }
 a{text-decoration: none;color: #FFF;}
@@ -366,6 +366,7 @@ section.section-description .scroll{
 .section-primary{
 	height: 550px;
 	border-top: 10px solid #091823;
+	background-color: #0c1c29;
 }
 .section-primary h1{
 	padding-top: 42px;

@@ -46,7 +46,31 @@ class Table {
 	}
 
 
-	private function getEntityClass() {
+	public function update($fields, $conditions) {
+		$sets       = array();
+		$wheres     = array();
+		$attributes = array();
+
+		// Construction des updates
+		foreach ($fields as $k => $v) {
+			$sets[]       = "$k = ?";
+			$attributes[] = $v;
+		}
+		// Construction des conditions
+		foreach ($conditions as $k => $v) {
+			$wheres[]     = "$k = ?";
+			$attributes[] = $v;
+		}
+
+		return $this->db->execute("
+			UPDATE {$this->table}
+			SET " . implode(',', $sets) . "
+			WHERE " . implode(' AND ', $wheres)
+		, $attributes);
+	}
+
+
+	protected function getEntityClass() {
 		$class_name = get_class($this);
 		$entity_class = str_replace('Table', 'Entity', $class_name);
 

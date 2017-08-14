@@ -17,7 +17,10 @@ class Dispatcher {
 		$controller = $this->loadController();
 		$action     = $this->request->action;
 
-		$controller->$action($this->request->params);
+		if (method_exists($controller, $action))
+			$controller->$action($this->request->params);
+		else
+			\App::getInstance()->notFound();
 	}
 
 
@@ -31,11 +34,7 @@ class Dispatcher {
 
             // On lance dans ce cas une erreur 404 simple.
             if (!$devMode) {
-                $customName = Config::getInstance()->getValue("customErrorController");
-                $name       = (!empty($customName)) ? $customName : "ErrorController";
-
-                $name = "\App\Controller\\$name";
-                $this->request->action = "error404";
+               \App::getInstance()->notFound();
             } else {
                 echo("Mode développeur actif. Nous vous informons des erreurs. <br>");
                 throw new UnknownControllerException(["Controller" => $ctrl]);

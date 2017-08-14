@@ -28,6 +28,7 @@
     <?= $Html->css("https://fonts.googleapis.com/css?family=Lato:400,700,900|Open+Sans:400,700") ?>
     <?= $Html->css("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css") ?>
     <?= $Html->css("style") ?>
+    <?= $Html->css("blog") ?>
 </head>
 <body>
     <header class="header">
