@@ -83,6 +83,10 @@ header section.upper .players .online {
 	font-weight: bold;
 	color: #2ECC71;
 }
+header section.upper .players .offline {
+	font-weight: bold;
+	color: #FF665E;
+}
 header section.upper .players span {
 	color: #BBB;
 }

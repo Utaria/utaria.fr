@@ -35,9 +35,7 @@ class Html {
 
     public function href($link) {
         $out  = filter_var($link, FILTER_VALIDATE_URL);
-
-        $internalLink = (Config::getInstance()->getValue("useURI")) ? 'public/?uri=' . $link : $link;
-        $href         = ($out) ? $link : BASE_URL . '/' . $internalLink;
+        $href = ($out) ? $link : \App::getInstance()->getBaseURI() . $link;
 
         return $href;
     }

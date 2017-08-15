@@ -11,7 +11,7 @@
     <meta name="robots" content="all" />
     <meta charset="UTF-8">
 
-    <title>Utaria | Serveur Minecraft innovant</title>
+    <title><?= $pageTitle ?></title>
 
     <meta name="viewport" content="width=device-width, initial-scale = 1, user-scalable = no">
 
@@ -38,7 +38,8 @@
                    <?= $Html->link("", $Html->img("logo.png")) ?>
                 </div>
                 <div class="players">
-                    <span class="online">En ligne.</span> <span>13/50</span> joueurs connectés
+                    <!-- <span class="online">En ligne.</span> <span>13/50</span> joueurs connectés -->
+                    <span class="offline">En maintenance.</span> Retour en <span>septembre</span>.
                 </div>
                 <nav class="navigation-header">
                     <a href="<?= $Html->href("voter") ?>" class="btn btn-secondary" title="Voter pour nous"><i class="fa fa-thumbs-up"></i>Voter</a>
@@ -122,9 +123,12 @@
 
     </footer>
 
+<?php if ($view_name == 'index'): ?>
     <?= $Html->js("particle") ?>
     <?= $Html->js("scroll") ?>
+<?php endif; ?>
+
     <?= $Html->js("clipboard") ?>
-    <?= $Html->js("copy") ?>
+    <?= $Html->js("app") ?>
 </body>
 </html>

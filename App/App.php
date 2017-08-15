@@ -47,6 +47,15 @@ class App {
 		die();
 	}
 
+	public function redirect($url) {
+		header('Location: ' . $this->getBaseURI() . $url);
+		die();
+	}
+
+	public function getBaseURI() {
+		return BASE_URL . '/' . ((Config::getInstance()->getValue("useURI")) ? 'public/?uri=' : '');
+	}
+
 	public function getTable($name) {
 		$class_name = '\\App\\Table\\' . ucfirst($name) . 'Table';
 		return new $class_name($this->getDb());

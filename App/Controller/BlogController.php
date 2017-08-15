@@ -25,9 +25,17 @@ class BlogController extends Controller {
 		$id   = $params['id'];
 		$slug = $params['slug'];
 
+		// Récupération de l'article
 		$article = $this->getTable()->findActive($id);
 		if ($article == null) App::getInstance()->notFound();
 
+		// On corrige le slug dans l'URL s'il n'est pas bon.
+		$realSlug = $this->slugify($article->title);
+
+		if ($slug != $realSlug)
+			\App::getInstance()->redirect("blog/$id-$realSlug");
+
+		// Récupération des commentaires dans leur propre table
 		$comments = App::getInstance()->getTable("BlogComment")->findFor($article->id);
 
 		// TODO: récupérer le joueur via l'API, car son nom est stocké dans
@@ -41,8 +49,10 @@ class BlogController extends Controller {
 			array("id"    => $article->id)       // Conditions
 		);
 
-		// Config::$pageTitle = $article->title . " - Devblog Utaria";
+		// On défini le titre de la page
+		$this->setPageTitle($article->title . ' - Blog');
 
+		// Puis on rend la vue, pour afficher la page ;-)
 		$this->render('blog.view', compact('article', 'comments'));
 	}
 

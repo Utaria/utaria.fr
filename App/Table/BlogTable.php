@@ -18,7 +18,7 @@ class BlogTable extends Table {
 	public function findActive($id) {
 		$article = $this->find($id);
 
-		return (!$article->draft && $article->date != null && strtotime($article->date) <= strtotime("now")) ? $article : null;
+		return ($article != null && !$article->draft && $article->date != null && strtotime($article->date) <= strtotime("now")) ? $article : null;
 	}
 
 }

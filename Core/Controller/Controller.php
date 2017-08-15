@@ -13,6 +13,7 @@ class Controller {
 	protected $useTable;
 
 	private   $table;
+	private   $pageTitle;
 
 
 	public function __construct() {
@@ -35,10 +36,29 @@ class Controller {
 			$table_classpath = '\App\Table\\' . $this->table_class;
 			$this->table = new $table_classpath(\App::getInstance()->getDb());
 		}
+
+		/*     Définition du titre par défaut    */
+		$template        = Config::getInstance()->getValue("title.template");
+		$defaultTitle    = Config::getInstance()->getValue("title.default");
+
+		$this->pageTitle = str_replace('%s', $defaultTitle, $template);
 	}
 
 	public function getTable() {
 		return $this->table;
+	}
+
+	public function getPageTitle() {
+		return $this->pageTitle;
+	}
+
+	public function setPageTitle($title) {
+		$template        = Config::getInstance()->getValue("title.template");
+		
+		if (strpos($template, '%s') === false)
+			$this->pageTitle = $title;
+		else
+			$this->pageTitle = str_replace('%s', $title, $template);
 	}
 
 
@@ -73,6 +93,8 @@ class Controller {
 		   -   Affichage du template   -
 		   ----------------------------- */
 		$templateFile = APP . DS . 'Views' . DS . 'templates' . DS . $this->template . '.php';
+		$pageTitle    = $this->getPageTitle();
+
 		if (file_exists($templateFile))
             require $templateFile;
         else
