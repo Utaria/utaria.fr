@@ -13,6 +13,14 @@ class GuideController extends Controller {
         $this->render("guide");
     }
 
+    public function subcategory() {
+    	$this->render("guide.subcategory");
+    }
+
+    public function article() {
+    	$this->render("guide.article");
+    }
+
 }
 
 ?>

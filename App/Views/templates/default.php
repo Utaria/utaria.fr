@@ -29,6 +29,10 @@
     <?= $Html->css("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css") ?>
     <?= $Html->css("style") ?>
     <?= $Html->css("blog") ?>
+    
+    <?php if (strpos($view_name, "guide") !== false): ?>
+        <?= $Html->css("guide") ?>
+    <?php endif; ?>
 </head>
 <body>
     <header class="header">

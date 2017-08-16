@@ -4,26 +4,10 @@
 		</section>
 		<section class="container-link">
 			<div class="wrap-inner">
-				<div class="category sub">
-					<h4>TITLE</h4>
-				</div>
-				<div class="category sub">
-					<h4>TITLE</h4>
-				</div>
-				<div class="category sub">
-					<h4>TITLE</h4>
-				</div>
-				<div class="category sub">
-					<h4>TITLE</h4>
-				</div>
-				<div class="category sub">
-					<h4>TITLE</h4>
-				</div>
-				<div class="category sub">
-					<h4>TITLE</h4>
-				</div>
-				<div class="category sub">
-					<h4>TITLE</h4>
-				</div>
+				<?php for ($i = 0; $i < 7; $i++): ?>
+					<a href="<?= $Html->href("guide/article") ?>"><div class="category sub">
+						<h4>TITLE</h4>
+					</div></a>
+				<?php endfor; ?>
 			</div>
 		</section>
