@@ -7,3 +7,4 @@ class BlogEntity extends Entity {
 
 
 }
+?>

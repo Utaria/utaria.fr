@@ -20,7 +20,6 @@ class BlogController extends Controller {
 		$this->render('blog', compact('articles'));
 	}
 
-
 	public function view($params) {
 		$id   = $params['id'];
 		$slug = $params['slug'];
@@ -56,8 +55,6 @@ class BlogController extends Controller {
 		$this->render('blog.view', compact('article', 'comments'));
 	}
 
-
-
 	private function slugify($text) {
 		$text = $this->replace_accents($text);
 		$text = preg_replace('~[^\pL\d]+~u', '-', $text);
@@ -80,3 +77,5 @@ class BlogController extends Controller {
 	}
 
 }
+
+?>

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Table;
 
 use Core\Table\Table;
@@ -22,3 +23,5 @@ class BlogTable extends Table {
 	}
 
 }
+
+?>
