@@ -1,0 +1,25 @@
+body
+{
+	margin: 0;
+}
+section.articles .article
+{
+	background-color: black;
+	width: 550px;height: 450px;
+	color: #FFF;
+	margin: 75px;
+}
+section.articles .article .type
+{
+	display: block;
+	width: 120px;height: 50px;
+	background-color: gray;
+}
+section.articles .article .content
+{
+	position: relative;
+	width: 440px;height: 340px;
+	background-color: red;
+	float: right;
+	bottom: 0;
+}

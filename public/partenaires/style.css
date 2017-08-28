@@ -1,0 +1,84 @@
+body{
+	background-color: #FFF;
+	color: black;
+}
+section.container-top{
+	height: 220px;width: 100%;
+	background-color: #e6e6e6;
+	text-align: center;
+}
+.container-top h2{
+	padding-top: 25px;
+	font-size: 52px;
+}
+.container-top p{
+	padding-top: 20px;
+	font-size: 27px;
+}
+/* Youtubers */
+.container-ytb .title
+{
+	margin-top: 35px;
+	width: 100%;height: 90px;
+	background-color: #e74c3c;
+	border-bottom: 7px solid #3498db;
+	line-height: 90px;
+	padding-left: 35px;
+	color: #FFF;
+}
+.container-ytb .title h3
+{
+	font-size: 35px;
+}
+.container-ytb .youtuber
+{
+	position: relative;
+	width: 175px;height: 175px;
+
+	text-align: center;
+	line-height: 175px;
+
+	background-color: black;
+
+	color: #FFF;
+
+	margin: 30px;
+	
+	float: left;
+}
+/* Streamers */
+.container-streamers
+{
+	padding-top: 220px;
+}
+.container-streamers .title
+{
+	margin-top: 35px;
+	width: 100%;height: 90px;
+	background-color: #8e44ad;
+	border-bottom: 7px solid #3498db;
+	line-height: 90px;
+	padding-left: 35px;
+	color: #FFF;
+}
+.container-streamers .title h3
+{
+	font-size: 35px;
+}
+.container-streamers .streamer
+{
+	position: relative;
+	width: 175px;height: 175px;
+
+	text-align: center;
+	line-height: 175px;
+
+	background-color: black;
+
+	color: #FFF;
+
+	margin: 30px;
+	
+	float: left;
+}
+streamers
