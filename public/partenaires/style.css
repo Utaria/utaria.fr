@@ -48,6 +48,15 @@ article.fold .state-off
 	background-color: #e74c3c;
 	margin: 0 auto;
 }
+article.fold .state-pending
+{
+	position: absolute;
+	top: calc(175px - 25px);
+	width: 20px;height: 20px;
+	border-radius: 50%;
+	background-color: gray;
+	margin: 0 auto;
+}
 /*YOUTUBERS*/
 .youtubers .title
 {
