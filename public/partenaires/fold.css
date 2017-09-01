@@ -1,0 +1,150 @@
+/*YOUTUBERS*/
+.youtubers .youtuber
+{
+    position: relative;
+    width: 175px;height: 175px;
+    background-color: #1a1a1a;
+    margin: 30px;
+    float: left;
+
+    border-radius: 10px;
+    
+    text-align: center;
+}
+.youtuber section
+{
+    position: absolute;
+    width: 100%;height: 100%;
+    top: 0;left: 0;
+    margin: 0 auto;
+}
+/*STREAMERS*/
+.streamers .streamer
+{
+	position: relative;
+	width: 175px;height: 175px;
+	background-color: #1a1a1a;
+	margin: 30px;
+	float: left;
+
+	border-radius: 10px;
+	
+	text-align: center;
+}
+.streamer section
+{
+	position: absolute;
+	width: 100%;height: 100%;
+	top: 0;left: 0;
+	margin: 0 auto;
+}
+/*FOLD*/
+article.fold
+{
+  	position: relative;
+	width: 100%;height: 100%;
+  	-webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+  	-moz-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+  	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+article.fold img
+{
+    width: 175px;height: 175px;
+}
+article.fold div
+{
+   	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    overflow: hidden;
+}
+article.fold .top .shadow
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.6) inset;
+    -moz-box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.6) inset;
+    box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.6) inset;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+article.fold .top img
+{
+	-moz-border-radius-topleft: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+article.fold .bot img
+{
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+article.fold .bot
+{
+    bottom: 0;
+    top: 50%;
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    -ms-transform-origin: 50% 0;
+    -o-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform: perspective(700px) rotateX(0deg);
+    -moz-transform: perspective(700px) rotateX(0deg);
+    -ms-transform: perspective(700px) rotateX(0deg);
+    -o-transform: perspective(700px) rotateX(0deg);
+    transform: perspective(700px) rotateX(0deg);
+    -webkit-transition: all 0.5s cubic-bezier(0.075, 0.45, 0.165, 1);
+    -moz-transition: all 0.5s cubic-bezier(0.075, 0.45, 0.165, 1);
+    -o-transition: all 0.5s cubic-bezier(0.075, 0.45, 0.165, 1);
+    transition: all 0.5s cubic-bezier(0.075, 0.45, 0.165, 1);
+}
+article.fold .bot img
+{
+    margin-top: -50%;
+}
+article.fold .bot .shadow
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: all 0.5s cubic-bezier(0.075, 0.45, 0.165, 1);
+    -moz-transition: all 0.5s cubic-bezier(0.075, 0.45, 0.165, 1);
+    -o-transition: all 0.5s cubic-bezier(0.075, 0.45, 0.165, 1);
+    transition: all 0.5s cubic-bezier(0.075, 0.45, 0.165, 1);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.25)), color-stop(100%, rgba(0, 0, 0, 0)));
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)); }
+article.fold:hover .bot
+{
+    -webkit-transform: perspective(700px) rotateX(65deg);
+    -moz-transform: perspective(700px) rotateX(65deg);
+    -ms-transform: perspective(700px) rotateX(65deg);
+    -o-transform: perspective(700px) rotateX(65deg);
+    transform: perspective(700px) rotateX(65deg); 
+}
+article.fold:hover .bot .shadow
+{
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
