@@ -22,6 +22,32 @@ section.container-top{
 	padding-top: 20px;
 	font-size: 27px;
 }
+article.fold h4
+{
+    position: absolute;
+    bottom: 0;left: 0;right: 0;
+    color: #FFF;
+    text-align: center;
+    font-size: 18px;
+}
+article.fold .state-on
+{
+	position: absolute;
+	top: calc(175px - 25px);
+	width: 20px;height: 20px;
+	border-radius: 50%;
+	background-color: #2ecc71;
+	margin: 0 auto;
+}
+article.fold .state-off
+{
+	position: absolute;
+	top: calc(175px - 25px);
+	width: 20px;height: 20px;
+	border-radius: 50%;
+	background-color: #e74c3c;
+	margin: 0 auto;
+}
 /*YOUTUBERS*/
 .youtubers .title
 {
@@ -35,10 +61,6 @@ section.container-top{
 	font-size: 33px;
 }
 /*STREAMERS*/
-.streamers
-{
-	/*padding-top: calc(175px + 50px)*/
-}
 .streamers .title
 {
 	margin-top: 35px;
