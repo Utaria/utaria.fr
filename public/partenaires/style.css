@@ -4,6 +4,9 @@ body{
 	font-family: sans-serif;
 	margin: 0;
 }
+.clear{
+	clear: both;
+}
 section.container-top{
 	position: relative;
 	height: 220px;width: 100%;
@@ -12,6 +15,7 @@ section.container-top{
 }
 .container-top h2{
 	padding-top: 25px;
+	margin-top: 0;
 	font-size: 52px;
 }
 .container-top p{
@@ -33,7 +37,7 @@ section.container-top{
 /*STREAMERS*/
 .streamers
 {
-	padding-top: calc(175px + 50px)
+	/*padding-top: calc(175px + 50px)*/
 }
 .streamers .title
 {
