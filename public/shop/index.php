@@ -13,7 +13,7 @@
 					<div class="add"><i class="fa fa-shopping-cart"></i></div>
 				</div>
 				<div class="content"><img src="2.jpg"></div>
-				<div class="bottom"></div>
+				<div class="bottom">Grade Utarien</div>
 			</div>
 			<div class="item"></div>
 			<div class="item"></div>
