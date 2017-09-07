@@ -16,7 +16,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>Booster (x3)</td>
+						<td><span class="booster">Booster</span>Booster (x3)</td>
 						<td>1</td>
 						<td>5.00$</td>
 					</tr>

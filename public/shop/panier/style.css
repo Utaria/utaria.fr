@@ -22,9 +22,18 @@ body
 {
 	width: 400px;
 }
-
-
 .basket table tbody tr td
 {
-	height: 40px;
+	height: auto;
+}
+.basket table tbody tr td .booster
+{
+	width: 70px;
+	height: 25px;
+	display: inline-block;
+	font-size: 18px;
+	background: #3498db;
+	color: #FFF;
+	text-align: center;
+	line-height: 25px;
 }
