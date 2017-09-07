@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Easter Egg</title>
+	</head>
+	<body>
+	<style>
+		body{
+			margin: 0;
+		}
+		.cube{
+			position: absolute;
+			width: 50px;height: 50px;
+			background-color: red;
+			top: 0;bottom: 0;right: 0;left: 0;
+		}
+	</style>
+		<div class="cube"></div>
+	</body>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script>
+
+	var VorH = Math.round(Math.random());
+
+	var r = Math.round(Math.random() * 100);
+	console.log(r);
+
+	if(VorH == 1){
+		$(".cube").css("top", r+"%");
+	}else{
+		$(".cube").css("left", r+"%");
+	}
+
+
+
+
+	</script>
+</html>

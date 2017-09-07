@@ -1,0 +1,30 @@
+body
+{
+	margin: 0;
+	font-family: sans-serif;
+}
+.basket
+{
+	width: 750px;height: 350px;
+	margin-left: 30%;margin-top: 5%;
+	border: 2px dashed black;
+}
+.basket table
+{
+	width: 100%;
+	font-size: 26px;
+}
+.basket table thead tr th
+{
+	text-align: left;
+}
+.basket table thead tr th:nth-child(1)
+{
+	width: 400px;
+}
+
+
+.basket table tbody tr td
+{
+	height: 40px;
+}
