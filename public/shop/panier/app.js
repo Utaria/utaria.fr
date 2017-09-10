@@ -1,3 +1,4 @@
 $(".quantity").change(function(e){
-	console.log($(".quantity").val());
+	var val = $(".quantity").val();
+	$(".price").text(val);
 });
