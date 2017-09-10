@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	// Image de fond dynamique
 	$.backstretch(
-		["http://lorempicsum.com/futurama/1920/1080/2","http://lorempicsum.com/futurama/1920/1080/3","http://lorempicsum.com/futurama/1920/1080/4"],
+		["img/001.jpg","img/002.jpg","img/003.jpg"],
 		{ fade: 750, duration: 2500 }
 	);
 

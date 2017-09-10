@@ -1,3 +1,7 @@
+<?php
+header('HTTP/1.1 503 Service Temporarily Unavailable');
+header('Status: 503 Service Temporarily Unavailable');
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -35,9 +39,9 @@
 
 			<h1>On revient bientôt avec du neuf !</h1>
 
-			<p class="description">Utaria est en pause... mais on revient avec du nouveau ! Préparez-vous à inviter vos amis... ça risque d'envoyer du lourd !</p>
+			<p class="description">Utaria est en pause... mais on revient avec du nouveau ! Préparez-vous à inviter des amis... ça risque d'envoyer du lourd !</p>
 			
-			<div class="v2cooldown" data-date="2017-09-23 16:00:00"></div>
+			<div class="v2cooldown" data-date="2017-09-30 14:00:00"></div>
 		</section>
 
 		<script type="text/javascript" src="js/jquery.min.js"></script>
