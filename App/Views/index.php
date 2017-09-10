@@ -69,7 +69,7 @@
     </div>
 </section>
 <section class="section section-secondary">
-    <div class="wrap-inner">
+    <div class="col-group wrap-inner">
         <div class="container-chest">
             <img src="chest/chest.png">
         </div>

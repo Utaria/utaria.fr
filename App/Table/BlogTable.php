@@ -9,6 +9,13 @@ class BlogTable extends Table {
 	protected $table = "blog_articles";
 
 
+	public function allByDate() {
+		return $this->db->query("
+			SELECT * from {$this->table}
+			ORDER BY date DESC
+		", $this->getEntityClass());
+	}
+
 	public function find($id) {
 		return $this->db->prepare("
 			SELECT * FROM {$this->table}

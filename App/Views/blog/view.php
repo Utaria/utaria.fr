@@ -5,31 +5,22 @@ function getCommentById($comments, $id) {
 			return $v;
 	return null;
 }
-
-$publishDate = "Publié le ". strftime("%d %B %Y", strtotime($article->date));
-if ($article->draft) $publishDate = "Brouillon rédigé";
-
 ?>
-<div class="top-box">
-	<div class="wrap-inner">
-		<h1<?php if(strlen($article->title) > 50): ?> style="font-size:2.2em"<?php endif; ?>><?= $article->title ?></h1>
-		<h3 class="subtitle"><?= $publishDate ?> par 
-		<span class="player-info"><img src="https://minotar.net/avatar/<?= $article->author ?>/32" alt="Avatar de <?= $article->author ?>"> <?= $article->author ?></span></h3>
+<div class="top-box article-top-box" style="background-image:url(http://lorempicsum.com/futurama/1280/500/2)">
+	<div class="col-group wrap-inner">
+		<h1><?= $article->title ?></h1>
+		<h3 class="subtitle">
+			<?= $article->publishDate ?> — <span class="player-info"><img src="https://minotar.net/avatar/<?= $article->author ?>/32" alt="Avatar de <?= $article->author ?>"> <span class="author"><?= $article->author ?></span></span>
+		</h3>
 	</div>
 </div>
-<div class="blog-content content">
-	<div class="wrap-inner">
-		<article id="lightgallery">
-			<?php
-			$regex = '#<img([^>]*) src="([^"/]*/?[^".]*\.[^"]*)"([^>]*)>((?!</a>))#';
-			$replace = '<div class="article-image"><a href="$2" rel="nofollow"><img$1 src="$2"$3></a></div>';
-			$content = preg_replace($regex, $replace, $article->content);
 
-			echo $content;
-			?>
-		</article>
+<article class="col-group wrap-inner blog-article" id="lightgallery">
+	<div class="content">
+		<?= $article->content; ?>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, et expedita eveniet rerum vero dolorem incidunt iste voluptatibus, nisi cumque sapiente rem alias numquam ullam odio officia, temporibus nobis similique. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt placeat, voluptate. Architecto eligendi laboriosam aspernatur reiciendis, obcaecati eaque nam molestias magni iste officiis iure corporis porro eveniet vel, odit nulla?
 	</div>
-</div>
+</article>
 
 <aside>
 	<div class="metabar">

@@ -8,13 +8,13 @@ class BlogController extends Controller {
 
 	public function index() {
 		$categorieTable = App::getInstance()->getTable("BlogCategorie");
-		$articles       = $this->getTable()->all();
+		$articles       = $this->getTable()->allByDate();
 
 		// On paramètre chaque article de la liste.
 		foreach ($articles as $article) {
 			$article->slug      = $this->slugify($article->title);
 			$article->categorie = $categorieTable->getNameById($article->category_id);
-			$article->date      = strftime("%d %B %Y", strtotime($article->date));
+			$article->there_is  = $this->thereIsDate(strtotime($article->date));
 		}
 
 		$this->render('blog', compact('articles'));
@@ -40,6 +40,16 @@ class BlogController extends Controller {
 		// TODO: récupérer le joueur via l'API, car son nom est stocké dans
 		//       une autre base de données.
 		$article->author = "Utarwyn";
+
+		// On parse le contenu pour afficher correctement les images
+		$regex   = '#<img([^>]*) src="([^"/]*/?[^".]*\.[^"]*)"([^>]*)>((?!</a>))#';
+		$replace = '<div class="article-image"><a href="$2" rel="nofollow"><img$1 src="$2"$3></a></div>';
+
+		$article->content = preg_replace($regex, $replace, $article->content);
+
+		// On gère la date de publication
+		$article->publishDate = strftime("%d %B %Y", strtotime($article->date));
+		if ($article->draft) $article->publishDate = "Brouillon";
 		
 		// On ajoute une vue à l'article qui vient d'être visionné
 		// sans se soucier de l'IP ou autre, on fait simple.
@@ -53,6 +63,24 @@ class BlogController extends Controller {
 
 		// Puis on rend la vue, pour afficher la page ;-)
 		$this->render('blog.view', compact('article', 'comments'));
+	}
+
+
+	private function thereIsDate($date) {
+		$diff    = time() - $date;
+		$thereIs = $diff . " seconde" . (($diff > 1) ? "s" : "");
+
+		if ($diff >= 86400) {
+			$thereIs = floor($diff / 86400) . " jours";
+		} else if ($diff >= 3600) {
+			$hrs     = floor($diff / 3600);
+			$thereIs = $hrs . " heure" . (($hrs > 1) ? "s" : "");
+		} else if ($diff >= 60) {
+			$mns     = floor($diff / 3600);
+			$thereIs = $mns . " minute" . (($mns > 1) ? "s" : "");
+		}
+
+		return "il y a $thereIs";
 	}
 
 	private function slugify($text) {

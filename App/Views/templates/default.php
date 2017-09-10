@@ -27,6 +27,7 @@
 
     <?= $Html->css("https://fonts.googleapis.com/css?family=Lato:400,700,900|Open+Sans:400,700") ?>
     <?= $Html->css("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css") ?>
+    <?= $Html->css("grid") ?>
     <?= $Html->css("style") ?>
     <?= $Html->css("blog") ?>
     
@@ -39,9 +40,9 @@
         <section class="upper">
             <div class="wrap-inner">
                 <div class="logo">
-                   <?= $Html->link("", $Html->img("logo.png")) ?>
-                </div>
-                <div class="players">
+                     <?= $Html->link("", $Html->img("logo.png")) ?>
+                 </div>
+                 <div class="players">
                     <!-- <span class="online">En ligne.</span> <span>13/50</span> joueurs connectés -->
                     <span class="offline">En maintenance.</span> Retour en <span>septembre</span>.
                 </div>
@@ -59,10 +60,10 @@
                 </div>
                 <nav class="sub-nav">
                     <a href="<?= $Html->href("blog") ?>" title="Notre blog">Blog</a>
-                    <a title="Statistiques du serveur" class="sub">Statistiques <i class="fa fa-caret-down"></i></a>
+                    <a title="Statistiques du serveur" class="sub">Statistiques <i class="fa fa-angle-down"></i></a>
                     <a href="<?= $Html->href("partenaires") ?>" title="Partenaires du serveur">Partenaires</a>
                     <a href="<?= $Html->href("suggestions") ?>" title="Suggestions">Suggestions</a>
-                    <a title="Informations du serveur" class="sub">Information <i class="fa fa-caret-down"></i></a>
+                    <a title="Informations du serveur" class="sub">Information <i class="fa fa-angle-down"></i></a>
                     <a href="<?= $Html->href("guide") ?>" title="Notre guide">Guide</a>
                 </nav>
             </div>
@@ -72,8 +73,8 @@
     <?= $content_for_layout; ?>
 
     <footer class="footer">
-        <div class="wrap-inner">
-            <div class="row row-3">
+        <div class="col-group wrap-inner">
+            <div class="col-3">
                 <div class="container-description">
                     <?= $Html->img("logo.png") ?>
                     <p>
@@ -102,17 +103,17 @@
 
 
 
-            <div class="row row-3">
+            <div class="col-3">
                 <ul class="container-pagination">
                     <li><?= $Html->link("blog", "Suivre notre avancement") ?></li>
                     <li><?= $Html->link("voter", "Votez pour nous") ?></li>
-                    <li><?= $Html->link("jouer", "nous rejoindre") ?></li>
+                    <li><?= $Html->link("jouer", "Nous rejoindre") ?></li>
                     <li><a href="#">Statistiques</a></li>
                     <li><a href="#">Nous contacter</a></li>
                 </ul>
             </div>
 
-            <div class="row row-3">
+            <div class="col-3">
                 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Futaria.fr%2F&tabs=timeline&width=385&height=250&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="385" height="250" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
             </div>
         </div>
