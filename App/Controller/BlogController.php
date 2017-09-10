@@ -14,7 +14,7 @@ class BlogController extends Controller {
 		foreach ($articles as $article) {
 			$article->slug      = $this->slugify($article->title);
 			$article->categorie = $categorieTable->getNameById($article->category_id);
-			$article->there_is  = $this->thereIsDate(strtotime($article->date));
+			$article->there_is  = $this->thereIsDate(@strtotime($article->date));
 		}
 
 		$this->render('blog', compact('articles'));
