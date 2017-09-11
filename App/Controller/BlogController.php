@@ -37,6 +37,11 @@ class BlogController extends Controller {
 		// Récupération des commentaires dans leur propre table
 		$comments = App::getInstance()->getTable("BlogComment")->findFor($article->id);
 
+		foreach ($comments as $comment) {
+			$comment->playername  = "Utarwyn";
+			$comment->thereIsDate = $this->thereIsDate(strtotime($comment->date));
+		}
+
 		// TODO: récupérer le joueur via l'API, car son nom est stocké dans
 		//       une autre base de données.
 		$article->author = "Utarwyn";
@@ -76,7 +81,7 @@ class BlogController extends Controller {
 			$hrs     = floor($diff / 3600);
 			$thereIs = $hrs . " heure" . (($hrs > 1) ? "s" : "");
 		} else if ($diff >= 60) {
-			$mns     = floor($diff / 3600);
+			$mns     = floor($diff / 60);
 			$thereIs = $mns . " minute" . (($mns > 1) ? "s" : "");
 		}
 

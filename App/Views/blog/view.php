@@ -1,11 +1,3 @@
-<?php
-function getCommentById($comments, $id) {
-	foreach ($comments as $v)
-		if ($v->id == $id)
-			return $v;
-	return null;
-}
-?>
 <div class="top-box article-top-box" style="background-image:url(http://lorempicsum.com/futurama/1280/500/2)">
 	<div class="col-group wrap-inner">
 		<h1><?= $article->title ?></h1>
@@ -15,136 +7,107 @@ function getCommentById($comments, $id) {
 	</div>
 </div>
 
-<article class="col-group wrap-inner blog-article" id="lightgallery">
-	<div class="content">
-		<?= $article->content; ?>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, et expedita eveniet rerum vero dolorem incidunt iste voluptatibus, nisi cumque sapiente rem alias numquam ullam odio officia, temporibus nobis similique. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt placeat, voluptate. Architecto eligendi laboriosam aspernatur reiciendis, obcaecati eaque nam molestias magni iste officiis iure corporis porro eveniet vel, odit nulla?
+<div class="article-container wrap-inner">
+	<div class="col-group blog-article" id="lightgallery">
+		<aside class="social-column col-2">
+			<a target="_blank" title="Facebook" href="https://www.facebook.com/sharer.php?u=<?= $Html->getCurrentURL() ?>&t=<?= $pageTitle ?>" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"><div class="social fb">
+				<i class="fa fa-facebook"></i> facebook
+			</div></a>
+
+			<a title="Twitter" target="_blank" href="https://twitter.com/intent/tweet?url=<?= $Html->getCurrentURL() ?>&via=Utaria_FR&text=<?= 'Titre de la page' ?>" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=280,width=500');return false;"><div class="social tw">
+				<i class="fa fa-twitter"></i> twitter
+			</div></a>
+
+			<a target="_blank" title="Google +" href="https://plus.google.com/share?url=<?= $Html->getCurrentURL() ?>&hl=fr" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=400');return false;"><div class="social gp">
+				<i class="fa fa-google-plus"></i> Google+
+			</div></a>
+
+			<a target="_blank" title="Envoyer par mail" href="mailto:?subject=<?= 'Titre de la page' ?>&body=<?= $Html->getCurrentURL() ?>" rel="nofollow"><div class="social ma">
+				<i class="fa fa-envelope"></i> e-mail
+			</div></a>
+
+			<div class="social vi">
+				<i class="fa fa-eye"></i> <?= $article->views ?> vue<?= (($article->views > 1) ? "s" : "") ?>
+			</div>
+		</aside>
+		<article class="content col-8">
+			<?= $article->content; ?>
+		</article>
 	</div>
-</article>
+	<div class="comments-container col-group" id="comments">
+		<h3><?= (count($comments) > 0) ? count($comments) : "Aucun" ?> commentaire<?= (count($comments) > 1) ? "s" : "" ?><?php if (count($comments) == 0): ?> — Postez le premier !<?php endif; ?></h3>
 
-<aside>
-	<div class="metabar">
-		<div class="wrap-inner">
-			<div class="left">
-				<p>
-					Article rédigé par <img src="https://minotar.net/avatar/<?= $article->author ?>/24" alt="Avatar de <?= $article->author ?>"> <b><?= $article->author ?></b>
-					<br /><br />
-					<div class="views-counter"><?= $article->views ?> vue<?= ($article->views > 1) ? "s" : "" ?></div>
-				</p>
-			</div>
-			<div class="right">
-				<div>
-			    	<p style="margin-bottom:5px"><i>Vous avez aimé cet article ? Alors partagez-le avec vos amis en cliquant sur les boutons ci-dessous :</i></p>
-			    <div>
-			        <a title="Twitter" href="https://twitter.com/intent/tweet?url=<?= $Html->getCurrentURL() ?>&via=Utaria_FR&text=<?= 'Titre de la page' ?>" rel="nofollow"><img src="https://korben.info/wp-content/themes/korben2013/hab/twitter_icon.png" alt="Twitter" /></a>
-			        <a target="_blank" title="Facebook" href="https://www.facebook.com/sharer.php?u=<?= $Html->getCurrentURL() ?>&t=<?= 'Titre de la page' ?>" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"><img src="https://korben.info/wp-content/themes/korben2013/hab/facebook_icon.png" alt="Facebook" /></a>
-			        <a target="_blank" title="Google +" href="https://plus.google.com/share?url=<?= $Html->getCurrentURL() ?>&hl=fr" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=400');return false;"><img src="https://korben.info/wp-content/themes/korben2013/hab/gplus_icon.png" alt="Google Plus" /></a>
-			        <a target="_blank" title="Envoyer par mail" href="mailto:?subject=<?= 'Titre de la page' ?>&body=<?= $Html->getCurrentURL() ?>" rel="nofollow"><img src="https://korben.info/wp-content/themes/korben2013/hab/email_icon.png" alt="email" /></a>
-			    </div>
-			</div>
-			</div>
-			<div class="clear"></div>
-		</div>		
-	</div>
-
-	<div class="comments wrap-inner" id="comments">
-		<h3><?= count($comments) ?> commentaire<?= (count($comments) > 1) ? "s" : "" ?></h3>
-		<hr />
-
-		<?php function printComment($list, $comment) { ?>
-			<div class="comment">
-				<div class="author-head">
-					<img src="https://minotar.net/avatar/<?= $comment->playername ?>/70" alt="Avatar de <?= $comment->playername ?>">
-				</div>	
-				<div class="content">
-					<div class="meta">
-						<span class="playername"><?= $comment->playername; ?></span>
-						&mdash;
-						Posté il y a <?= formatDate($comment->date) ?>
-
-						<span class="send_response" id="response_trigger" data-commentid="<?= $comment->id ?>">
-							(Cliquez pour répondre)
-						</span>
-
-						<?php if($comment->comment_parent_id != null): ?>
-							<span class="response_to">
-								En réponse à 
-								<b><?= getCommentById($list, $comment->comment_parent_id)->playername ?></b>
-							</span>
-						<?php endif; ?>
-					</div>
-
-					<p>
-						<?= nl2br(stripslashes($comment->content)) ?>
-					</p>
-				</div>
-				
-				<div class="clear"></div>
-
-				<div class="subcomments">
-					<?php 
-					$list = array_reverse($list);
-					foreach ($list as $v)
-						if ($v->comment_parent_id == $comment->id)
-							printComment($list, $v);
-					?>
-				</div>
-			</div>
-			
-			<div class="clear"></div>
-		<?php } ?>
-
-		<?php
-			foreach ($comments as $v)
-				if ($v->comment_parent_id == null)
-					printComment($comments, $v);
-		?>
-
-		<form method="POST" id="postcomment" action="/devblog/postcomment">
-			<br />
-			<h3>Postez <?php if (count($comments) > 0): ?>aussi un<?php else: ?>le premier<?php endif; ?> commentaire !</h3>
-			<br />
-
-			<div class="row-container">
-
-				<div class="postform_parent_comment-container">
-					<span class="introduce">Répondre à :</span>
-					<div id="postform_parent_comment" class="comment"></div>
-				</div>
-
+		<form method="POST" id="postcomment" action="">
+			<div class="col-12">
 				<input type="hidden" name="parentCommentId" value="-1" id="parent_comment_id_input">
 				<input type="hidden" name="articleId" value="<?= $article->id ?>">
 
-
-				<div class="left">
+				<div class="col-6">
 					<div class="input<?= (isset($_GET["err"]) ? " error" : "") ?>">
-						<label for="playername">Pseudo sur le serveur</label>
-						<input type="text" name="playername" id="playername" placeholder="Votre nom de joueur" required autocomplete="off">
+						<label for="playername">Pseudonyme</label>
+						<input type="text" name="playername" id="playername" placeholder="Votre pseudo de joueur" required autocomplete="off">
 					</div>
 				</div>	
-				<div class="right">
+				<div class="col-6">
 					<div class="input<?= (isset($_GET["err"]) ? " error" : "") ?>">
 						<label for="password">Mot de passe de connexion</label>
 						<input type="password" name="password" id="password" placeholder="Votre mot de passe" required autocomplete="off">
 					</div>
 				</div>
-
-				<div class="clear"></div>
-				<br />
-
-				<div class="input">
-					<label for="content">Commentaire</label>
-					<textarea name="content" id="content" placeholder="Le contenu de votre commentaire" required autocomplete="off"></textarea>
+				<div class="col-12">
+					<textarea name="content" id="content" placeholder="Votre commentaire..." required autocomplete="off"></textarea>
 				</div>
 
-				<div class="input">
+				<div class="col-offset-10 col-2">
 					<input type="submit" name="" id="postcomment_form" value="Envoyer">
 				</div>
 				<div class="clear"></div>
 			</div>
 		</form>
+		
+		<?php function printComment($list, $comment, $offset) { ?>
+			<?php if ($offset > 0): ?>
+				<div class="reply-icon col-1 col-offset-<?= ($offset > 1) ? 1 : 0 ?>">
+					<i class="fa fa-mail-reply"></i>
+				</div>
+			<?php endif; ?>
+
+			<div class="comment col-<?= 12 - $offset ?>">
+				<div class="author-head col-1">
+					<img src="https://minotar.net/avatar/<?= $comment->playername ?>/70" alt="Avatar de <?= $comment->playername ?>">
+				</div>	
+				<div class="content col-11">
+					<div class="meta">
+						<span class="playername"><?= $comment->playername; ?></span>
+						<span class="date"><?= $comment->thereIsDate ?></span>
+
+						&mdash; <span class="reply" id="response_trigger" data-commentid="<?= $comment->id ?>">
+							Répondre
+						</span>
+					</div>
+
+					<p>
+						<?= nl2br(stripslashes($comment->content)) ?>
+					</p>
+				</div>				
+			</div>
+			
+			<?php 
+				foreach ($list as $v)
+					if ($v->parent_comment_id == $comment->id)
+						printComment($list, $v, $offset + 1);
+			?>
+		<?php } ?>
+		
+		<div class="comments-list col-group">
+		<?php
+			foreach ($comments as $v)
+				if (is_null($v->parent_comment_id))
+					printComment($comments, $v, 0);
+		?>
+		</div>
 	</div>
-</aside>
+</div>
 
 <script type="text/javascript" src="/js/devblog.js" defer></script>
 

@@ -9,8 +9,11 @@ class BlogCommentTable extends Table {
 
 
 	public function findFor($id) {
-		// TODO : retourner les articles pour l'article avec l'identifiant $id.
-		return array();
+		return $this->db->prepare("
+			SELECT * FROM {$this->table}
+			WHERE article_id = ?
+			ORDER BY date DESC
+		", [$id], $this->getEntityClass(), false);
 	}
 
 }

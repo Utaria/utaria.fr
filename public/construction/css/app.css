@@ -99,3 +99,41 @@ section.content p.description {
 	width: 790px;height: auto;
 	margin: 15px auto;
 }
+
+
+@media (max-width: 800px) {
+	
+	section.content {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		left: 0;top: 0;
+	}
+
+	.v2cooldown {
+		display: none;
+	}
+
+}
+
+@media (max-width: 450px) {
+	
+	section.content img.logo {
+		width: 80%;
+	}
+	
+	section.content span.badge {
+		left: 80%;
+		top: 80px;
+	}
+
+	section.content h1 {
+		font-size: 2em;
+	}
+
+	section.content p.description {
+		width: 90%;
+		margin: 30px 5%;
+	}
+
+}

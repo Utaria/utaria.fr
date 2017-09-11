@@ -73,7 +73,8 @@ class Controller {
         /* -----------------------------
            - Préparations des helpeurs -
            ----------------------------- */
-        $Html = new Html();
+		$Html      = new Html();
+		$pageTitle = $this->getPageTitle();
 
 		/* -----------------------------
 		   -    Affichage de la vue    -
@@ -93,7 +94,6 @@ class Controller {
 		   -   Affichage du template   -
 		   ----------------------------- */
 		$templateFile = APP . DS . 'Views' . DS . 'templates' . DS . $this->template . '.php';
-		$pageTitle    = $this->getPageTitle();
 
 		if (file_exists($templateFile))
             require $templateFile;
