@@ -1,3 +1,51 @@
+    <?php
+ 
+      session_start();
+ 
+
+ 
+      $db = new PDO("mysql:host=localhost;dbname=website","root","root");
+ 
+
+ 
+      $articles = array();
+ 
+
+ 
+      $req = $db->query("SELECT * FROM shop_articles");
+ 
+
+ 
+      while($all = $req->fetch())
+ 
+      {
+ 
+        $articles[] = $all;
+ 
+      }
+ 
+
+ 
+      if(isset($_SESSION["cart"])){
+ 
+
+ 
+        foreach($articles as $article)
+ 
+        {
+ 
+          if(!in_array($article["id"], $_SESSION["cart"])) continue;
+ 
+          echo $article["name"]."<br>";
+ 
+        }
+ 
+
+ 
+      }
+ 
+    ?>
+ 
 <html>
 	<head>
 		<meta charset="utf-8">
