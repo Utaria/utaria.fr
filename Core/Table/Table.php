@@ -69,6 +69,16 @@ class Table {
 		, $attributes);
 	}
 
+	public function insert($datas) {
+		$pi   = array_fill(0, count($datas), "?");
+		$attr = array_values($datas);
+
+		return $this->db->execute("
+			INSERT INTO {$this->table} (" . implode(',', array_keys($datas)) . ")
+			VALUES(" . implode(',', $pi) . ")"
+		, $attr);
+	}
+
 
 	protected function getEntityClass() {
 		$class_name = get_class($this);

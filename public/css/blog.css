@@ -472,6 +472,55 @@ article img {
 	width: calc(100% - 80px);
 }
 
+.reply-comment-container {
+	display: none;
+	position: relative;
+	background: #DDD;
+	width: 100%; height: 50px;
+	border-radius: 2px 2px 0 0;
+	padding: 5px;
+
+	overflow: hidden;
+}
+.reply-comment-container.opened { display: block }
+.reply-comment-container.opened + textarea {
+	margin-top: 0;
+	border-radius: 0 0 2px 2px;
+}
+.reply-comment-container img {
+	float: left;
+	margin-right: 10px;
+}
+.reply-comment-container span.replymsg {
+	position: relative;
+	color: black;
+	top: -5px;
+	font-size: .8em;
+}
+.reply-comment-container div.content {
+	display: block;
+	position: relative;
+	top: -5px;
+	color: #383838;
+	font-size: .8em;
+}
+.reply-comment-container div.content span {
+	display: inline-block;position: relative;
+	width: 90%;height: 18px;
+	overflow: hidden;
+}
+.reply-comment-container .close {
+	position: absolute;display: block;
+	right: 5px;top: 2px;
+	color: #e74c3c;
+
+	transition: ease-out .2s;
+}
+.reply-comment-container .close:hover {
+	transform: scale(1.2);
+	cursor: pointer;
+}
+
 .reply-icon i.fa {
 	position: relative;
 	transform: rotate(180deg);
