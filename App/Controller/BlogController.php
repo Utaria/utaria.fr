@@ -1,7 +1,8 @@
 <?php
 namespace App\Controller;
 
-use Core\Controller\Controller;
+use \Core\Controller\Controller;
+use \App\Helper\API;
 use \App;
 
 class BlogController extends Controller {
@@ -14,6 +15,9 @@ class BlogController extends Controller {
 		foreach ($articles as $article) {
 			$article->slug      = $this->slugify($article->title);
 			$article->categorie = $categorieTable->getNameById($article->category_id);
+
+			$article->author    = API::get("player.name", array("id" => $article->author_id))->playername;
+
 			$article->there_is  = $this->thereIsDate(@strtotime($article->date));
 		}
 
@@ -38,13 +42,12 @@ class BlogController extends Controller {
 		$comments = App::getInstance()->getTable("BlogComment")->findFor($article->id);
 
 		foreach ($comments as $comment) {
-			$comment->playername  = "Utarwyn";
+			$comment->playername  = API::get("player.name", array("id" => $comment->player_id))->playername;
 			$comment->thereIsDate = $this->thereIsDate(strtotime($comment->date));
+			$comment->content = stripslashes($comment->content);
 		}
 
-		// TODO: récupérer le joueur via l'API, car son nom est stocké dans
-		//       une autre base de données.
-		$article->author = "Utarwyn";
+		$article->author = API::get("player.name", array("id" => $article->author_id))->playername;
 
 		// On parse le contenu pour afficher correctement les images
 		$regex   = '#<img([^>]*) src="([^"/]*/?[^".]*\.[^"]*)"([^>]*)>((?!</a>))#';
@@ -70,13 +73,50 @@ class BlogController extends Controller {
 		$this->render('blog.view', compact('article', 'comments'));
 	}
 
+	public function postcomment($params) {
+		if (empty($params)) App::getInstance()->notFound();
+		$id = $params["id"];
+
+		// Récupération de l'article
+		$article = $this->getTable()->findActive($id);
+		if ($article == null || empty($_POST)) App::getInstance()->notFound();
+
+		$player = API::get("player.checkauth", array(
+			"name"     => $_POST["playername"],
+			"password" => sha1($_POST["password"])
+		), true);
+
+		if (!$player->auth || is_null($player->player_id)) {
+			App::getInstance()->redirect("blog/{$article->id}-r#comments");
+		}
+
+		if ($_POST["parentCommentId"] == "-1")
+			$_POST["parentCommentId"] = null;
+
+		$comTable = App::getInstance()->getTable("BlogComment");
+
+		$content = htmlentities($_POST["content"]);
+		$content = addslashes($content);
+
+		$comTable->insert(array(
+			"content"           => $content,
+			"article_id"        => $article->id,
+			"player_id"         => $player->player_id,
+			"parent_comment_id" => $_POST["parentCommentId"]
+		));
+
+		//var_dump($article); die();
+		App::getInstance()->redirect("blog/{$article->id}-r#comments");
+	}
+
 
 	private function thereIsDate($date) {
 		$diff    = time() - $date;
 		$thereIs = $diff . " seconde" . (($diff > 1) ? "s" : "");
 
 		if ($diff >= 86400) {
-			$thereIs = floor($diff / 86400) . " jours";
+			$days    = floor($diff / 86400);
+			$thereIs = $days . " jour" . (($days > 1) ? "s" : "");
 		} else if ($diff >= 3600) {
 			$hrs     = floor($diff / 3600);
 			$thereIs = $hrs . " heure" . (($hrs > 1) ? "s" : "");

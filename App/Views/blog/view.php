@@ -37,10 +37,9 @@
 	<div class="comments-container col-group" id="comments">
 		<h3><?= (count($comments) > 0) ? count($comments) : "Aucun" ?> commentaire<?= (count($comments) > 1) ? "s" : "" ?><?php if (count($comments) == 0): ?> — Postez le premier !<?php endif; ?></h3>
 
-		<form method="POST" id="postcomment" action="">
-			<div class="col-12">
+		<div id="commentform col-group" style="position:relative;margin-bottom:20px">
+			<form method="POST" id="postcomment" action="<?= $Html->href("blog/postcomment/" . $article->id) ?>">
 				<input type="hidden" name="parentCommentId" value="-1" id="parent_comment_id_input">
-				<input type="hidden" name="articleId" value="<?= $article->id ?>">
 
 				<div class="col-6">
 					<div class="input<?= (isset($_GET["err"]) ? " error" : "") ?>">
@@ -54,16 +53,22 @@
 						<input type="password" name="password" id="password" placeholder="Votre mot de passe" required autocomplete="off">
 					</div>
 				</div>
-				<div class="col-12">
+				<div class="col-12" id="textarea-container">
+					<div class="reply-comment-container">
+						<img src="" alt="Avatar Minecraft">
+						<span class="replymsg">Répondre à <b>---</b> :</span>
+						<div class="content"><i class="fa fa-quote-left"></i> <span></span> <i class="fa fa-quote-right"></i></div>
+
+						<div class="close"><i class="fa fa-times-circle"></i></div>
+					</div>
 					<textarea name="content" id="content" placeholder="Votre commentaire..." required autocomplete="off"></textarea>
 				</div>
 
 				<div class="col-offset-10 col-2">
 					<input type="submit" name="" id="postcomment_form" value="Envoyer">
 				</div>
-				<div class="clear"></div>
-			</div>
-		</form>
+			</form>
+		</div>
 		
 		<?php function printComment($list, $comment, $offset) { ?>
 			<?php if ($offset > 0): ?>
@@ -81,7 +86,7 @@
 						<span class="playername"><?= $comment->playername; ?></span>
 						<span class="date"><?= $comment->thereIsDate ?></span>
 
-						&mdash; <span class="reply" id="response_trigger" data-commentid="<?= $comment->id ?>">
+						&mdash; <span class="comment-r reply" data-commentid="<?= $comment->id ?>">
 							Répondre
 						</span>
 					</div>
@@ -109,9 +114,41 @@
 	</div>
 </div>
 
-<script type="text/javascript" src="/js/devblog.js" defer></script>
+<script type="text/javascript">
+window.addEventListener("load", function() {
+	var commentReply = document.querySelectorAll(".comment-r");
+	var textareaCont = document.getElementById("textarea-container");
+	var replyCont    = textareaCont.querySelector(".reply-comment-container");
 
-<script type="text/javascript" src="/js/lightgallery.min.js"></script>
+	for (var commentR of commentReply)
+		commentR.addEventListener("click", function() {
+			var id      = this.getAttribute("data-commentid");
+			var name    = this.parentNode.querySelector(".playername").innerHTML;
+			var content = this.parentNode.parentNode.querySelector("p").innerHTML;
+
+			replyCont.querySelector("img").src = "https://minotar.net/avatar/" + name + "/40";
+			replyCont.querySelector(".content span").innerHTML = content;
+			replyCont.querySelector(".replymsg b").innerHTML = name;
+
+			replyCont.classList.add("opened");
+
+			document.getElementById("parent_comment_id_input").value = id;
+
+			textareaCont.querySelector("textarea").placeholder = "Votre réponse au commentaire...";
+
+			window.location.hash = "comments";
+
+			replyCont.querySelector(".close").addEventListener("click", function() {
+				textareaCont.querySelector("textarea").placeholder = "Votre commentaire...";
+				this.parentNode.classList.remove("opened");
+
+				document.getElementById("parent_comment_id_input").value = "-1";
+			});
+		});
+});
+</script>
+
+<!-- <script type="text/javascript" src="/js/lightgallery.min.js"></script>
 <script type="text/javascript" src="/js/lg-zoom.js"></script>
 <script type="text/javascript">
 	var imageLinks = document.querySelectorAll(".article-image");
@@ -119,4 +156,4 @@
 
     for (var imageLink of imageLinks)
     	lightGallery(imageLink, opts);
-</script>
+</script> -->

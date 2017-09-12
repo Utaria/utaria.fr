@@ -12,7 +12,7 @@
 					<div class="article col-<?= (($i == 0) ? '12' : '6') ?>">
 						<div class="title">
 							<h3><?= $article->title ?></h3>
-							<span class="meta"><?= ucfirst($article->there_is) ?> par <span><img src="https://minotar.net/avatar/Utarwyn/18"> Utarwyn</span></span>
+							<span class="meta"><?= ucfirst($article->there_is) ?> par <span><img src="https://minotar.net/avatar/<?= $article->author ?>/18"> <?= $article->author ?></span></span>
 						</div>
 
 						<span class="type-badge"><?= $article->categorie ?></span>
