@@ -34,6 +34,9 @@
     <?php if (strpos($view_name, "guide") !== false): ?>
         <?= $Html->css("guide") ?>
     <?php endif; ?>
+    <?php if (strpos($view_name, "partenaires") !== false): ?>
+        <?= $Html->css("partenaires") ?>
+    <?php endif; ?>
 </head>
 <body>
     <header class="header">
@@ -60,7 +63,7 @@
                 </div>
                 <nav class="sub-nav">
                     <a href="<?= $Html->href("blog") ?>" title="Notre blog">Blog</a>
-                    <a title="Statistiques du serveur" class="sub">Statistiques <i class="fa fa-angle-down"></i></a>
+                    <!-- <a title="Statistiques du serveur" class="sub">Statistiques <i class="fa fa-angle-down"></i></a> -->
                     <a href="<?= $Html->href("partenaires") ?>" title="Partenaires du serveur">Partenaires</a>
                     <a href="<?= $Html->href("suggestions") ?>" title="Suggestions">Suggestions</a>
                     <a title="Informations du serveur" class="sub">Information <i class="fa fa-angle-down"></i></a>
