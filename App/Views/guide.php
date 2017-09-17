@@ -1,7 +1,10 @@
-<section class="container-top">
-	<h2>Guide</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-</section>
+<div class="top-box">
+	<div class="wrap-inner" style="text-align:center">
+		<h1>Guide</h1>
+		<h3 class="subtitle">Laissez nous vous aider !</h3>
+	</div>
+</div>
+
 <section class="container-link">
 <div class="col-group wrap-inner">
 		<?php for ($i = 0; $i < 7; $i++): ?>

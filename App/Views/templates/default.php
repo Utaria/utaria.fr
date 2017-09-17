@@ -67,6 +67,12 @@
                     <a href="<?= $Html->href("partenaires") ?>" title="Partenaires du serveur">Partenaires</a>
                     <a href="<?= $Html->href("suggestions") ?>" title="Suggestions">Suggestions</a>
                     <a title="Informations du serveur" class="sub">Information <i class="fa fa-angle-down"></i></a>
+                    <div class="sec-nav">
+                        <a href="<?= $Html->href("reglement") ?>" title="Règlement du serveur">Règlement</a>
+                        <a href="<?= $Html->href("apropos/team") ?>" title="L'équipe d'Utaria">L'équipe</a>
+                        <a href="<?= $Html->href("apropos/conditions") ?>" title="Conditions générales d'utilisation">Conditions</a>
+                        <a href="<?= $Html->href("apropos/vgc") ?>" title="Conditions générales de vente">Conditions de vente</a>
+                    </div>
                     <a href="<?= $Html->href("guide") ?>" title="Notre guide">Guide</a>
                 </nav>
             </div>
@@ -111,8 +117,8 @@
                     <li><?= $Html->link("blog", "Suivre notre avancement") ?></li>
                     <li><?= $Html->link("voter", "Votez pour nous") ?></li>
                     <li><?= $Html->link("jouer", "Nous rejoindre") ?></li>
-                    <li><a href="#">Statistiques</a></li>
-                    <li><a href="#">Nous contacter</a></li>
+                    <!-- <li><a href="#">Statistiques</a></li> -->
+                    <li><a href="mailto:contact@utaria.fr">Nous contacter</a></li>
                 </ul>
             </div>
 

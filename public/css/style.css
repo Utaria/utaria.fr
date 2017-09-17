@@ -193,11 +193,31 @@ header section.lower nav.sub-nav a {
 	     -o-transition: ease-out .2s;
 	        transition: ease-out .2s;
 }
-header section.lower nav.sub-nav a:hover {
+header section.lower nav.sub-nav a:hover,
+header section.lower nav.sub-nav a.hover {
 	background: rgba(0, 0, 0, 0.1);
 }
 header section.lower nav.sub-nav a i.fa-caret-down {
 	padding-left: 3px;
+}
+header section.lower nav.sub-nav .sub + .sec-nav {
+	position: absolute;display: block;
+	z-index: -1;opacity: 0;
+
+	background: rgb(41, 128, 185);
+	top: 100%;
+
+	transition: opacity .2s ease-out;
+}
+header section.lower nav.sub-nav .sub + .sec-nav a {
+	display: block;
+	float: none;
+
+	font-size: .7em;
+}
+header section.lower nav.sub-nav .sub:hover { cursor: pointer; }
+header section.lower nav.sub-nav .sub + .sec-nav.opened {
+	opacity: 1; z-index: 1;
 }
 
 
