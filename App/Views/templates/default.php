@@ -70,8 +70,7 @@
                     <div class="sec-nav">
                         <a href="<?= $Html->href("reglement") ?>" title="Règlement du serveur">Règlement</a>
                         <a href="<?= $Html->href("apropos/team") ?>" title="L'équipe d'Utaria">L'équipe</a>
-                        <a href="<?= $Html->href("apropos/conditions") ?>" title="Conditions générales d'utilisation">Conditions</a>
-                        <a href="<?= $Html->href("apropos/vgc") ?>" title="Conditions générales de vente">Conditions de vente</a>
+                        <a href="<?= $Html->href("apropos/conditions") ?>" title="Conditions générales d'utilisation">Conditions d'utilisation</a>
                     </div>
                     <a href="<?= $Html->href("guide") ?>" title="Notre guide">Guide</a>
                 </nav>
@@ -129,9 +128,8 @@
 
         <div class="wrap-inner">
             <div class="container-link">
-                <?= $Html->link("a-propos/conditions", "Conditions générales d'utilisation") ?>
-                <?= $Html->link("a-propos/reglement", "Règlement") ?>
-                <?= $Html->link("a-propos/cgv", "Conditions de vente") ?>
+                <?= $Html->link("apropos/conditions", "Conditions générales d'utilisation") ?>
+                <?= $Html->link("reglement", "Règlement") ?>
             </div>
         </div>
 
