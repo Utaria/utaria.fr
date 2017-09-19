@@ -6,11 +6,16 @@
 </div>
 
 <section class="container-link">
-<div class="col-group wrap-inner">
-		<?php for ($i = 0; $i < 7; $i++): ?>
-			<a href="<?= $Html->href("guide/subcategory") ?>"><div class="category">
-				<h4>TITLE</h4>
-			</div></a>
-		<?php endfor; ?>
+	<div class="col-group wrap-inner">
+		<?php foreach ($categories as $category): ?>
+			<a class="col-3" href="<?= $Html->href("guide/{$category->id}-{$category->slug}") ?>">
+
+				<div class="category">
+					<div class="bg" style="background-image:url(<?= $Html->srcImg("guide/{$category->id}.jpg") ?>)"></div>
+					<h4><?= $category->name ?></h4>
+				</div>
+
+			</a>
+		<?php endforeach ?>
 	</div>
 </section>

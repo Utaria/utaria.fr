@@ -46,8 +46,17 @@
                      <?= $Html->link("", $Html->img("logo.png")) ?>
                  </div>
                  <div class="players">
-                    <!-- <span class="online">En ligne.</span> <span>13/50</span> joueurs connectés -->
-                    <span class="offline">En maintenance.</span> Retour en <span>septembre</span>.
+                    <?php
+                    // Requête vers l'API
+                    // TODO : utiliser le cache PHP pour éviter de faire la requête à chaque nouvelle page
+                    $status = App\Helper\API::get("server.status", array(), false, true);
+                    ?>
+
+                    <?php if (!$status->maintenance): ?>
+                        <span class="online">En ligne.</span> <span><?= $status->players ?>/<?= $status->maxplayers ?></span> joueurs connectés
+                    <?php else: ?>
+                        <span class="offline">En maintenance.</span> Retour en <span>septembre</span>.
+                    <?php endif; ?>
                 </div>
                 <nav class="navigation-header">
                     <a href="<?= $Html->href("voter") ?>" class="btn btn-secondary" title="Voter pour nous"><i class="fa fa-thumbs-up"></i>Voter</a>
@@ -69,7 +78,7 @@
                     <a title="Informations du serveur" class="sub">Information <i class="fa fa-angle-down"></i></a>
                     <div class="sec-nav">
                         <a href="<?= $Html->href("reglement") ?>" title="Règlement du serveur">Règlement</a>
-                        <a href="<?= $Html->href("apropos/team") ?>" title="L'équipe d'Utaria">L'équipe</a>
+                        <!-- <a href="<?= $Html->href("apropos/team") ?>" title="L'équipe d'Utaria">L'équipe</a> -->
                         <a href="<?= $Html->href("apropos/conditions") ?>" title="Conditions générales d'utilisation">Conditions d'utilisation</a>
                     </div>
                     <a href="<?= $Html->href("guide") ?>" title="Notre guide">Guide</a>

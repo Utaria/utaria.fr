@@ -23,6 +23,15 @@ body{
 }
 a{text-decoration: none;color: #FFF;}
 
+article ul {
+	margin: 10px 30px;
+	list-style: square;
+}
+article ul li { margin: 5px 0; }
+article h3 { margin-top: 30px;margin-bottom: 5px; }
+article a { color: #2980b9;font-weight: bold; }
+article a:hover { text-decoration: underline; }
+
 .wrap-inner {
 	width: 1200px;
 	margin: auto;
@@ -352,6 +361,8 @@ section.section-description .scroll{
 	text-align: center;
 	font-size: 22px;
 
+	text-transform: uppercase;
+
 	animation-duration: 1s;
 	animation-name: downup;
 	animation-iteration-count: infinite;
@@ -371,6 +382,18 @@ section.section-description .scroll{
 /**
  * 	Contenu de la page
  */
+.top-box.oth {
+	background: url(../img/guide-h.jpg) center;
+	background-size: cover;
+}
+.top-box.oth:before {
+	display: block;position: absolute;
+	top: 0;bottom: 0;right: 0;left: 0;
+	content: " ";
+	
+	background: rgba(0, 0, 0, 0.7);
+}
+
 .section{
 	width: 100%;height: auto;
 	text-align: center;
@@ -382,15 +405,19 @@ section.section-description .scroll{
 }
 .section-primary h1{
 	padding-top: 42px;
-	font-size: 34px;
+	font-size: 1.5em;
 	text-transform: uppercase;
+}
+.section-primary h3{
+	padding-top: 10px;
+	font-size: 1.8em;
+	text-transform: uppercase;
+
+	color: #f1c40f;
 }
 .section-primary .container-description{
 	position: relative;
-	width: auto;height: auto;
-}
-.section-primary .container-description div{
-	text-align: center;
+	width: 100%;height: auto;
 }
 .section-primary .container-description img{
 	position: relative;
@@ -398,66 +425,53 @@ section.section-description .scroll{
 	padding-top: 0;
 }
 .section-primary .container-description h1{
-	font-size: 48px;
+	font-size: 2em;
 	padding-top: 0;
 }
 .section-primary .container-description p{
 	font-size: 26px;
 }
-.section-primary .container-description .money{
-	position: relative;
-	width: 320px;height: 310px;
-	top: 115px;left: 120px;
+.section-primary .container-description div {
+	margin-top: 50px;
 }
 .section-primary .container-description .money h1{
 	text-transform: uppercase;
 	color: #f1c40f;
 }
-.section-primary .container-description .survival{
-	position: absolute;
-	width: 320px;height: 310px;
-	top: 25px;
-	/*TEMPORAIRE*/ left: calc(50% - 320px / 2);
-}
 .section-primary .container-description .survival h1{
 	text-transform: uppercase;
 	color: #26d653;
 }
-.section-primary .container-description .pvp{
-	position: absolute;
-	width: 320px;height: 310px;
-	top: 115px;right: 120px;
-}
-.section-primary .container-description .pvp h1{
+.section-primary .container-description .pvp h1 {
 	text-transform: uppercase;
 	color: #2980b9;
 }
-.section-secondary{
+.section-secondary {
 	text-align: left;
 	background-color: #0a1824;
 	padding: 50px;
 }
-.section-secondary .container-chest{
+.section-secondary .container-chest {
 	position: relative;
 	width: 250px;height: 250px;
 	float: left;
 
 }
-.section-secondary .container-chest img{
+.section-secondary .container-chest img {
 	width: 100%;
 	height: 100%;
 }
-.section-secondary .container-txt{
+.section-secondary .container-txt {
 	position: relative;
 	width: calc(100% - 360px);
 	margin-left: 60px;
 	margin-top: 60px;
 	float: left;
 }
-.container-txt{
+.container-txt {
 	width: 700px;height: auto;
 }
-.section-secondary h1{
+.section-secondary h1 {
 	font-size: 28px;
 	text-transform: uppercase;
 }

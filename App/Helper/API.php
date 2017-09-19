@@ -7,7 +7,7 @@ class API {
 
 	private static $URL = "https://utaria.fr/api/";
 
-	public static function get($method, $params, $useToken = false) {
+	public static function get($method, $params, $useToken = false, $force = false) {
 		$method      = str_replace(".", "/", $method);
 
 
@@ -21,7 +21,7 @@ class API {
 		// Récupération de la valeur en cache si elle existe
 		if (session_status() == PHP_SESSION_NONE)
 			session_start();
-		if (isset($_SESSION["api_cache"][$endpoint]))
+		if (isset($_SESSION["api_cache"][$endpoint]) && !$force)
 			return $_SESSION["api_cache"][$endpoint];
 
 		$ret         = file_get_contents(API::$URL . $endpoint);
