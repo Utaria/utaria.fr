@@ -398,8 +398,8 @@ section.section-description .scroll{
 	width: 100%;height: auto;
 	text-align: center;
 }
-.section-primary{
-	height: 550px;
+.section-primary {
+	padding-bottom: 50px;
 	border-top: 10px solid #091823;
 	background-color: #0c1c29;
 }
@@ -418,6 +418,7 @@ section.section-description .scroll{
 .section-primary .container-description{
 	position: relative;
 	width: 100%;height: auto;
+	margin: 0;
 }
 .section-primary .container-description img{
 	position: relative;
@@ -429,51 +430,52 @@ section.section-description .scroll{
 	padding-top: 0;
 }
 .section-primary .container-description p{
-	font-size: 26px;
+	font-size: 20px;
 }
 .section-primary .container-description div {
 	margin-top: 50px;
-}
-.section-primary .container-description .money h1{
-	text-transform: uppercase;
-	color: #f1c40f;
-}
-.section-primary .container-description .survival h1{
-	text-transform: uppercase;
-	color: #26d653;
-}
-.section-primary .container-description .pvp h1 {
-	text-transform: uppercase;
-	color: #2980b9;
 }
 .section-secondary {
 	text-align: left;
 	background-color: #0a1824;
 	padding: 50px;
 }
-.section-secondary .container-chest {
+.section-secondary .col-image {
 	position: relative;
 	width: 250px;height: 250px;
 	float: left;
+	margin-top: 10px;
+}
+.section-secondary .col-image img {
+	width: 80%;
+	height: 80%;
+	margin: 10%;
+}
+.section-secondary .col-image:before {
+	display: block;position: absolute;
+	height: 100%;width: 100%;
+	content: " ";
 
+	border-radius: 50%;
+
+	background: rgba(0, 0, 0, .15);
 }
-.section-secondary .container-chest img {
-	width: 100%;
-	height: 100%;
-}
-.section-secondary .container-txt {
+.section-secondary .col-content {
 	position: relative;
-	width: calc(100% - 360px);
-	margin-left: 60px;
-	margin-top: 60px;
+	width: calc(100% - 250px);
 	float: left;
+	padding: 30px 50px;
+}
+.section-secondary .col-content h2 {
+	display: block;
+	position: relative;
+
+	font-size: 28px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
 }
 .container-txt {
 	width: 700px;height: auto;
-}
-.section-secondary h1 {
-	font-size: 28px;
-	text-transform: uppercase;
 }
 
 

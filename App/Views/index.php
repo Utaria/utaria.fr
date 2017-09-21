@@ -26,65 +26,46 @@
 
 <section id="section-primary" class="section section-primary">
 	<h1>Découvrez un nouveau mode de jeu !</h1>
-	<h3>La Guerre de faction</h3>
+	<h3>&mdash; La Guerre de territoire &mdash;</h3>
 	<div class="container-description col-group">
-		<div class="money col-4">
-			<img src="http://lorempicsum.com/futurama/90/90/2">
-			<h1>Money</h1>
+		<div class="col-4">
+			<?= $Html->img("icons/shield.png") ?>
 			<p>
-				Lorem ipsum dolor sit
-				<br>
-				amet, consectetur
-				<br>
-				adipiscing elit. In auctor
-				<br>
-				velit ac dapibus.
+				Protégez votre territoire<br>
+				et résistez aux attaques<br>
+				de l'équipe adverse !
 			</p>
 		</div>
-		<div class="survival col-4">
-			<img src="http://lorempicsum.com/futurama/90/90/2">
-			<h1>Survival</h1>
-			<p>
-				Lorem ipsum dolor sit
-				<br>
-				amet, consectetur
-				<br>
-				adipiscing elit. In auctor
-				<br>
-				velit ac dapibus.
+		<div class="col-4">
+			<?= $Html->img("icons/sword.png") ?>
+			<p style="padding-top:2px">
+				Menez des combats incroyables<br>
+				afin de remporter la guerre et<br>
+				des bonus exclusifs !
 			</p>
 		</div>
-		<div class="pvp col-4">
-			<img src="http://lorempicsum.com/futurama/90/90/2">
-			<h1>Pvp</h1>
-			<p>
-				Lorem ipsum dolor sit
-				<br>
-				amet, consectetur
-				<br>
-				adipiscing elit. In auctor
-				<br>
-				velit ac dapibus.
+		<div class="col-4">
+			<?= $Html->img("icons/landscape.png") ?>
+			<p style="padding-top:2px">
+				Jouez dans un paysage magnifique<br>
+				et découvrez tous les secrets<br>
+				du monde d'Utaria !
 			</p>
 		</div>
 	</div>
 </section>
 <section class="section section-secondary">
 	<div class="col-group wrap-inner">
-		<div class="container-chest">
-			<img src="chest/chest.png">
+		<div class="col-image">
+			<?= $Html->img("icons/earth.png"); ?>
 		</div>
-		<div class="container-txt">
-			<h1>Découvrez les trésors cachés !</h1>
-			<br><br>
+		<div class="col-content">
+			<h2>Une survie complètement inédite !</h2>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-				<br>
-				dapibus felis a lacinia blandit. Cras quis scelerisque turpis, eu vestibulum mi.
-				<br>
-				Nunc tempor sit amet tortor vel suscipit. Fusce est risus, porttitor quis libero et,
-				<br>
-				blandit tempor mauris. Maecenas sit amet pretium ex.
+				Besoin de <b style="color:#1abc9c">RENOUVEAU</b> dans un mode de jeu vu et revu sur la majorité des serveurs ?<br><br>
+				Vous êtes bien tombés ! Un <b style="color:#f1c40f">MONDE UNIQUE</b>, des <b style="color:#2ecc71">SUCCÈS INÉDITS</b>, des protections efficaces, des <b style="color:#9b59b6">PLUGINS FAITS À LA MAIN</b>, une économie fleurissante et bien plus !
+				<br><br>
+				Invitez vos amis, et passez un bon moment !
 			</p>
 		</div>
 	</div>
