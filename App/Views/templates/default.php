@@ -30,7 +30,7 @@
     <?= $Html->css("grid") ?>
     <?= $Html->css("style") ?>
     <?= $Html->css("blog") ?>
-    
+
     <?php if (strpos($view_name, "guide") !== false): ?>
         <?= $Html->css("guide") ?>
     <?php endif; ?>
@@ -39,7 +39,7 @@
     <?php endif; ?>
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <section class="upper">
             <div class="wrap-inner">
                 <div class="logo">
@@ -124,7 +124,7 @@
                 <ul class="container-pagination">
                     <li><?= $Html->link("blog", "Suivre notre avancement") ?></li>
                     <li><?= $Html->link("voter", "Votez pour nous") ?></li>
-                    <li><?= $Html->link("jouer", "Nous rejoindre") ?></li>
+                    <li><a href="#header">Nous rejoindre</a></li>
                     <!-- <li><a href="#">Statistiques</a></li> -->
                     <li><a href="mailto:contact@utaria.fr">Nous contacter</a></li>
                 </ul>
@@ -146,9 +146,9 @@
 
 <?php if ($view_name == 'index'): ?>
     <?= $Html->js("particle") ?>
-    <?= $Html->js("scroll") ?>
 <?php endif; ?>
 
+    <?= $Html->js("scroll") ?>
     <?= $Html->js("clipboard") ?>
     <?= $Html->js("app") ?>
 </body>
