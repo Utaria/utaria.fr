@@ -139,6 +139,8 @@
             <div class="container-link">
                 <?= $Html->link("apropos/conditions", "Conditions générales d'utilisation") ?>
                 <?= $Html->link("reglement", "Règlement") ?>
+
+                <span style="float:right;font-size:.8em">Site créé par <a href="https://twitter.com/Utarwyn" style="margin:0" target="_blank">Utarwyn</a> et <a href="https://twitter.com/Fatapix" style="margin:0" target="_blank">Fatapix</a>.</span>
             </div>
         </div>
 

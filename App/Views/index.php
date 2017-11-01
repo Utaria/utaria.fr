@@ -62,7 +62,7 @@
 		<div class="col-content">
 			<h2>Une survie complètement inédite !</h2>
 			<p>
-				Besoin de <b style="color:#1abc9c">RENOUVEAU</b> dans un mode de jeu vu et revu sur la majorité des serveurs ?<br><br>
+				Besoin de <b style="color:#1abc9c">RENOUVEAU</b> dans un mode de jeu vu et revu sur beaucoup de serveurs ?<br><br>
 				Vous êtes bien tombés ! Un <b style="color:#f1c40f">MONDE UNIQUE</b>, des <b style="color:#2ecc71">SUCCÈS INÉDITS</b>, des protections efficaces, des <b style="color:#9b59b6">PLUGINS FAITS À LA MAIN</b>, une économie fleurissante et bien plus !
 				<br><br>
 				Invitez vos amis, et passez un bon moment !
