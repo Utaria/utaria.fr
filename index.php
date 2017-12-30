@@ -2,7 +2,7 @@
 header('HTTP/1.1 503 Service Temporarily Unavailable');
 header('Status: 503 Service Temporarily Unavailable');
 
-define("BASE", dirname($_SERVER["SCRIPT_NAME"]));
+define("BASE", rtrim(dirname($_SERVER["SCRIPT_NAME"]), "/"));
 
 $badges = array("RIP", "THE END", "FEJ?", "ZZZ", "XYZ");
 $titles = array(
@@ -11,6 +11,8 @@ $titles = array(
     "Euh... y a quelqu'un ?",
     "Il existe encore ce site ?"
 );
+
+$title = $titles[array_rand($titles)];
 ?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <!-- TU FAIS QUOI LÀ JEUNE PADAWAN ???                             -->
@@ -23,8 +25,8 @@ $titles = array(
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="description" content="Utaria, les serveurs de demain ! Marre du survie classique de Minecraft ? Venez tester notre survie UNIQUE sur mc.utaria.fr !">
-	    <meta name="keywords" content="minecraft,serveur minecraft,serveur,survie unique,unique,original,nouveau,survival">
+		<meta name="description" content="Utaria, les serveurs d'après-après-demain ! Vous savez où ça en est ? Nous on sait pas...">
+	    <meta name="keywords" content="minecraft,serveur minecraft,serveur,survie unique,unique,original,nouveau,survival,imprevisible,long,tres long, tres tres long, tres tres tres long">
 	    <meta name="author" content="Utaria">
 	    <meta name="dcterms.rightsHolder" content="utaria">
 	    <meta name="Revisit-After" content="2 days">
@@ -33,13 +35,13 @@ $titles = array(
 	    <meta name="robots" content="all" />
 	    <meta charset="UTF-8">
 
-		<title>Utaria | Préparez-vous, on revient !</title>
+		<title>Utaria | <?= $title ?></title>
 
 		<meta name="viewport" content="width=device-width, initial-scale = 1, user-scalable = no">
 		<meta name="twitter:card" content="summary">
 	    <meta name="twitter:site" content="@Utaria_FR">
-	    <meta name="twitter:title" content="Utaria, un serveur UNIQUE.">
-	    <meta name="twitter:description" content="Préparez-vous, on revient avec du nouveau !">
+	    <meta name="twitter:title" content="Utaria, un serveur mort... Euh non, on revient !">
+	    <meta name="twitter:description" content="<?= $title ?>">
 	    <meta property="og:title" content="Utaria">
 	    <meta property="og:type" content="website">
 	    <meta property="og:url" content="https://utaria.fr/">
@@ -59,7 +61,7 @@ $titles = array(
 			<img class="logo" src="<?= BASE ?>/img/logo.png?v=2.1" alt="Logo d'Utaria">
 			<span class="badge"><?= $badges[array_rand($badges)] ?></span>
 
-            <h1><?= $titles[array_rand($titles)] ?></h1>
+            <h1><?= $title ?></h1>
 
 			<p class="description">
                 Bonne question ! Le fondateur m'a dit que c'était terminé... <i class="em em-skull_and_crossbones"></i><i class="em em-cry"></i>
