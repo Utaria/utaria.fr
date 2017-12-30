@@ -50,7 +50,8 @@ section.content img.logo {
 
 section.content span.badge {
 	display: block;position: absolute;
-	left: 72%;top: 85px;
+	/*left: 72%;top: 85px;*/
+	left: 70%;top: 85px;
 	
 	padding: 5px 10px;
 	border-radius: 5px;
