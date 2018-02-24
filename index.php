@@ -4,15 +4,7 @@ header('Status: 503 Service Temporarily Unavailable');
 
 define("BASE", rtrim(dirname($_SERVER["SCRIPT_NAME"]), "/"));
 
-$badges = array("RIP", "THE END", "FEJ?", "ZZZ", "XYZ");
-$titles = array(
-    "Il se passe quoi ici ?",
-    "UTARIA ?? C'est quoi ?",
-    "Euh... y a quelqu'un ?",
-    "Il existe encore ce site ?"
-);
-
-$title = $titles[array_rand($titles)];
+$title = "Préparez-vous, on arrive !";
 ?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <!-- TU FAIS QUOI LÀ JEUNE PADAWAN ???                             -->
@@ -25,8 +17,8 @@ $title = $titles[array_rand($titles)];
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="description" content="Utaria, les serveurs d'après-après-demain ! Vous savez où ça en est ? Nous on sait pas...">
-	    <meta name="keywords" content="minecraft,serveur minecraft,serveur,survie unique,unique,original,nouveau,survival,imprevisible,long,tres long, tres tres long, tres tres tres long">
+		<meta name="description" content="Utaria, les serveurs de bientôt ! Préparez-vous à une aventure unique !">
+	    <meta name="keywords" content="minecraft,serveur minecraft,serveur,survie unique,unique,original,nouveau,survival">
 	    <meta name="author" content="Utaria">
 	    <meta name="dcterms.rightsHolder" content="utaria">
 	    <meta name="Revisit-After" content="2 days">
@@ -40,7 +32,7 @@ $title = $titles[array_rand($titles)];
 		<meta name="viewport" content="width=device-width, initial-scale = 1, user-scalable = no">
 		<meta name="twitter:card" content="summary">
 	    <meta name="twitter:site" content="@Utaria_FR">
-	    <meta name="twitter:title" content="Utaria, un serveur mort... Euh non, on revient !">
+	    <meta name="twitter:title" content="Utaria, un serveur survie UNIQUE !">
 	    <meta name="twitter:description" content="<?= $title ?>">
 	    <meta property="og:title" content="Utaria">
 	    <meta property="og:type" content="website">
@@ -49,7 +41,6 @@ $title = $titles[array_rand($titles)];
 	    <link rel="icon" type="image/png" href="<?= BASE ?>/img/favicon.png?v=2" />
 	
 		<meta name="viewport" content="width=device-width, initial-scale = 1, user-scalable = no">
-	
 
 		<link href="//fonts.googleapis.com/css?family=Lato:400,600" rel="stylesheet">
         <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
@@ -59,24 +50,12 @@ $title = $titles[array_rand($titles)];
 	<body>
 		<section class="content wrapper">
 			<img class="logo" src="<?= BASE ?>/img/logo.png?v=2.1" alt="Logo d'Utaria">
-			<span class="badge"><?= $badges[array_rand($badges)] ?></span>
+			<span class="badge">V2</span>
 
             <h1><?= $title ?></h1>
+            <div class="v2cooldown" data-date="2018-03-03 14:00:00"></div>
+            <!-- Oui, ce coup-ci c'est bien la bonne date ! ;-) -->
 
-			<p class="description">
-                Bonne question ! Le fondateur m'a dit que c'était terminé... <i class="em em-skull_and_crossbones"></i><i class="em em-cry"></i>
-                <br /><br />
-                <span style="font-size:1.2em">Allez, on vous taquine, prenez soin de vous, on revient <strong style="text-transform: uppercase">début 2018 !</strong>
-                <br />
-                Des bisous <i class="em em-kissing_heart"></i>
-                </span>
-            </p>
-			
-			<!--
-                <div class="v2cooldown" data-date="2070-12-12 02:00:00"></div>
-                On ouvre à 2 heures du matin, c'est rigolo, non ?
-                Tu pensais que j'allais mettre la vraie date ici ? héhé ;-)
-			-->
 		</section>
 
 		<script type="text/javascript" src="<?= BASE ?>/js/jquery.min.js?v=2.1"></script>
@@ -97,8 +76,8 @@ $title = $titles[array_rand($titles)];
             $(document).ready(function() {
                 // Image de fond dynamique
                 $.backstretch(
-                    //["<?= BASE ?>/img/001.jpg","<?= BASE ?>/img/002.jpg","<?= BASE ?>/img/003.jpg"],
-                    ["<?= BASE ?>/img/d1.jpg","<?= BASE ?>/img/d2.jpg","<?= BASE ?>/img/d3.jpg","<?= BASE ?>/img/d4.jpg","<?= BASE ?>/img/d5.jpg","<?= BASE ?>/img/d6.jpg"],
+                    ["<?= BASE ?>/img/001.jpg","<?= BASE ?>/img/002.jpg","<?= BASE ?>/img/003.jpg"],
+                    //["<?= BASE ?>/img/d1.jpg","<?= BASE ?>/img/d2.jpg","<?= BASE ?>/img/d3.jpg","<?= BASE ?>/img/d4.jpg","<?= BASE ?>/img/d5.jpg","<?= BASE ?>/img/d6.jpg"],
                     { fade: 750, duration: 2500 }
                 );
 
