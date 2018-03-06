@@ -1,10 +1,10 @@
 <?php
-header('HTTP/1.1 503 Service Temporarily Unavailable');
-header('Status: 503 Service Temporarily Unavailable');
+//header('HTTP/1.1 503 Service Temporarily Unavailable');
+//header('Status: 503 Service Temporarily Unavailable');
 
 define("BASE", rtrim(dirname($_SERVER["SCRIPT_NAME"]), "/"));
 
-$title = "Préparez-vous, on arrive !";
+$title = "Ça y est, on est là !";
 ?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <!-- TU FAIS QUOI LÀ JEUNE PADAWAN ???                             -->
@@ -52,9 +52,20 @@ $title = "Préparez-vous, on arrive !";
 			<img class="logo" src="<?= BASE ?>/img/logo.png?v=2.1" alt="Logo d'Utaria">
 			<span class="badge">V2</span>
 
-            <h1><?= $title ?></h1>
-            <div class="v2cooldown" data-date="2018-03-03 14:00:00"></div>
+            <h1><?= $title ?> <i class="em em---1"></i> <i class="em em-fire"></i></h1>
+
+            <button data-clipboard-text="mc.utaria.fr" onclick="alert('IP copiée !');" class="button-ip">
+                mc.utaria.fr
+            </button>
+
+            <!-- <div class="v2cooldown" data-date="2018-03-03 14:00:00"></div> -->
             <!-- Oui, ce coup-ci c'est bien la bonne date ! ;-) -->
+
+            <div class="socials">
+                <a class="discord" href="https://discord.gg/UNgPrPk" target="_blank"></a>
+                <a class="twitter" href="https://twitter.com/Utaria_FR" target="_blank"></a>
+                <a class="fb"      href="https://facebook.com/utaria.fr/" target="_blank"></a>
+            </div>
 
 		</section>
 
@@ -71,6 +82,8 @@ $title = "Préparez-vous, on arrive !";
 
           gtag('config', 'UA-87706617-1');
         </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
 
         <script type="text/javascript">
             $(document).ready(function() {
@@ -116,6 +129,8 @@ $title = "Préparez-vous, on arrive !";
                 $(window).resize(function() {
                     $(".v2cooldown").TimeCircles().rebuild();
                 });
+
+                new ClipboardJS('.button-ip');
 
             });
         </script>
