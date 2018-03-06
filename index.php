@@ -44,12 +44,12 @@ $title = "Ça y est, on est là !";
 
 		<link href="//fonts.googleapis.com/css?family=Lato:400,600" rel="stylesheet">
         <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-		<link href="<?= BASE ?>/css/timecircles.css?v=2.1" rel="stylesheet">
-		<link href="<?= BASE ?>/css/app.css?v=2.1" rel="stylesheet">
+		<link href="<?= BASE ?>/css/timecircles.css?v=2.2" rel="stylesheet">
+		<link href="<?= BASE ?>/css/app.css?v=2.2" rel="stylesheet">
 	</head>
 	<body>
 		<section class="content wrapper">
-			<img class="logo" src="<?= BASE ?>/img/logo.png?v=2.1" alt="Logo d'Utaria">
+			<img class="logo" src="<?= BASE ?>/img/logo.png?v=2.2" alt="Logo d'Utaria">
 			<span class="badge">V2</span>
 
             <h1><?= $title ?> <i class="em em---1"></i> <i class="em em-fire"></i></h1>
