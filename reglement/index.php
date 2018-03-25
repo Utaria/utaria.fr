@@ -1,5 +1,5 @@
 <?php
-define("BASE", dirname(rtrim(dirname($_SERVER["SCRIPT_NAME"]), "/")));
+define("BASE", rtrim(dirname(dirname($_SERVER["SCRIPT_NAME"])), "/"));
 ?>
 <!DOCTYPE html>
 <html>
