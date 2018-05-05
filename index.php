@@ -4,7 +4,7 @@
 
 define("BASE", rtrim(dirname($_SERVER["SCRIPT_NAME"]), "/"));
 
-$title = "Communauté Minecraft.";
+$title = "Les projets Minecraft du futur !";
 ?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <!-- TU FAIS QUOI LÀ JEUNE PADAWAN ???                             -->
@@ -17,8 +17,8 @@ $title = "Communauté Minecraft.";
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="description" content="Utaria, les serveurs de bientôt ! Préparez-vous à une aventure unique !">
-	    <meta name="keywords" content="minecraft,serveur minecraft,serveur,survie unique,unique,original,nouveau,survival">
+		<meta name="description" content="Utaria, une communauté... et des projets Minecraft incroyables et inédits !">
+	    <meta name="keywords" content="minecraft,serveur minecraft,serveur,faction unique,futur,faction du futur,unique,original,nouveau,faction">
 	    <meta name="author" content="Utaria">
 	    <meta name="dcterms.rightsHolder" content="utaria">
 	    <meta name="Revisit-After" content="2 days">
@@ -27,12 +27,12 @@ $title = "Communauté Minecraft.";
 	    <meta name="robots" content="all" />
 	    <meta charset="UTF-8">
 
-		<title>Utaria | <?= $title ?></title>
+		<title><?= $title ?> - Utaria</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale = 1, user-scalable = no">
 		<meta name="twitter:card" content="summary">
 	    <meta name="twitter:site" content="@Utaria_FR">
-	    <meta name="twitter:title" content="Utaria, un serveur survie UNIQUE !">
+	    <meta name="twitter:title" content="Utaria, un réseau communautaire basé sur #Minecraft.">
 	    <meta name="twitter:description" content="<?= $title ?>">
 	    <meta property="og:title" content="Utaria">
 	    <meta property="og:type" content="website">
@@ -60,7 +60,7 @@ $title = "Communauté Minecraft.";
 			<img class="logo" src="<?= BASE ?>/img/logo.png?v=05052018" alt="Logo d'Utaria">
 			<!-- <span class="badge">V3</span> -->
 
-            <h1><?= $title ?></h1>
+            <h1>Communauté Minecraft</h1>
             <h2>On cherche à faire du nouveau !</h2>
 
             <div class="button-ip-container">
