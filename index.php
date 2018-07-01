@@ -52,7 +52,7 @@ $title = "Les projets Minecraft du futur !";
         <!-- Pour afficher correctement la vidéo -->
         <link href="<?= BASE ?>/css/vjs.css?v=01072018" rel="stylesheet">
         <!-- Maintenant j'inclue mon magnifique code, en espérant que ça fasse pas tout planter... -->
-		<link href="<?= BASE ?>/css/app.css?v=05052018" rel="stylesheet">
+		<link href="<?= BASE ?>/css/app.css?v=01072018" rel="stylesheet">
 	</head>
 	<body>
         <!-- Bannière d'acceptation/rejet des cookies (miam) (Règlementation CNIL) -->
@@ -64,7 +64,7 @@ $title = "Les projets Minecraft du futur !";
         </div>
 
 		<section class="content wrapper">
-			<img class="logo" src="<?= BASE ?>/img/logo.png?v=05052018" alt="Logo d'Utaria">
+			<img class="logo" src="<?= BASE ?>/img/logo.png?v=01072018" alt="Logo d'Utaria">
 			<!-- <span class="badge">RIP</span> -->
 
             <h1>Communauté Minecraft</h1>
@@ -89,9 +89,9 @@ $title = "Les projets Minecraft du futur !";
 		</section>
 
         <!-- Plein de scripts plus ou moins utiles... -->
-		<script type="text/javascript" src="<?= BASE ?>/js/jquery.min.js?v=05052018"></script>
-        <script type="text/javascript" src="<?= BASE ?>/js/backstretch.js?v=05052018"></script>
-        <script type="text/javascript" src="<?= BASE ?>/js/cookies-cnil.js?v=05052018"></script>
+		<script type="text/javascript" src="<?= BASE ?>/js/jquery.min.js?v=01072018"></script>
+        <script type="text/javascript" src="<?= BASE ?>/js/backstretch.js?v=01072018"></script>
+        <script type="text/javascript" src="<?= BASE ?>/js/cookies-cnil.js?v=01072018"></script>
         <script type="text/javascript" src="<?= BASE ?>/js/vjs.js?v=01072018"></script>
         <script type="text/javascript" src="<?= BASE ?>/js/vjsfr.js?v=01072018"></script>
         <script type="text/javascript">
