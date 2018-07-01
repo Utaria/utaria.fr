@@ -29,6 +29,7 @@ $title = "Les projets Minecraft du futur !";
 
 		<title><?= $title ?> - Utaria</title>
 
+        <!-- Ca c'est pour les moteurs de recherche, prenez les infos si besoin. -->
 		<meta name="viewport" content="width=device-width, initial-scale = 1, user-scalable = no">
 		<meta name="twitter:card" content="summary">
 	    <meta name="twitter:site" content="@Utaria_FR">
@@ -38,13 +39,19 @@ $title = "Les projets Minecraft du futur !";
 	    <meta property="og:type" content="website">
 	    <meta property="og:url" content="https://utaria.fr/">
 
+        <!-- C'est toujours mieux avec une icône -->
 	    <link rel="icon" type="image/png" href="<?= BASE ?>/img/favicon.png?v=2" />
 
+        <!-- Indispensable pour les mobiles et tablettes -->
 		<meta name="viewport" content="width=device-width, initial-scale = 1, user-scalable = no">
 
+        <!-- On ajoute de belles polices pour faire croire que le site est beau -->
 		<link href="//fonts.googleapis.com/css?family=Lato:400,600" rel="stylesheet">
+        <!-- Les emojis, c'est la vie, donc on les utilise sur notre site, oui. -->
         <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-		<link href="<?= BASE ?>/css/timecircles.css?v=05052018" rel="stylesheet">
+        <!-- Pour afficher correctement la vidéo -->
+        <link href="<?= BASE ?>/css/vjs.css?v=01072018" rel="stylesheet">
+        <!-- Maintenant j'inclue mon magnifique code, en espérant que ça fasse pas tout planter... -->
 		<link href="<?= BASE ?>/css/app.css?v=05052018" rel="stylesheet">
 	</head>
 	<body>
@@ -58,24 +65,20 @@ $title = "Les projets Minecraft du futur !";
 
 		<section class="content wrapper">
 			<img class="logo" src="<?= BASE ?>/img/logo.png?v=05052018" alt="Logo d'Utaria">
-			<!-- <span class="badge">V3</span> -->
+			<!-- <span class="badge">RIP</span> -->
 
             <h1>Communauté Minecraft</h1>
-            <h2>On cherche à faire du nouveau !</h2>
+            <h2>Fin de NextGen <i class="em em-film_projector"></i> <i class="em em-sob"></i></h2>
 
-            <div class="button-ip-container">
-                <div class="button-ip-top">
-                    Le faction du futur !
-                </div>
-                <button data-clipboard-text="nextgen.utaria.fr" onclick="animationBoutonIp(event)" class="button-ip">
-                    <span class="ip">nextgen.utaria.fr</span>
-                    <span class="copied">Ip copiée !</span>
-                </button>
-            </div>
+            <!-- La vidéo de fin du projet NextGen :'( -->
+            <video id="my-player" class="video-js vjs-default-skin">
+                <source src="<?= BASE ?>/storage/video-fin.mp4" type="video/mp4">
+            </video>
 
             <!-- <div class="v2cooldown" data-date="2018-03-03 17:00:00"></div> -->
             <!-- C'était l'heure d'ouverture de notre Survie ! :'( RIP -->
 
+            <!-- Nos superbes réseaux, viendez on y est bien ! -->
             <div class="socials">
                 <a class="discord" href="https://discord.gg/UNgPrPk" target="_blank"></a>
                 <a class="twitter" href="https://twitter.com/Utaria_FR" target="_blank"></a>
@@ -85,10 +88,24 @@ $title = "Les projets Minecraft du futur !";
 
 		</section>
 
+        <!-- Plein de scripts plus ou moins utiles... -->
 		<script type="text/javascript" src="<?= BASE ?>/js/jquery.min.js?v=05052018"></script>
         <script type="text/javascript" src="<?= BASE ?>/js/backstretch.js?v=05052018"></script>
         <script type="text/javascript" src="<?= BASE ?>/js/cookies-cnil.js?v=05052018"></script>
-		<script type="text/javascript" src="<?= BASE ?>/js/timecircles.js?v=05052018"></script>
+        <script type="text/javascript" src="<?= BASE ?>/js/vjs.js?v=01072018"></script>
+        <script type="text/javascript" src="<?= BASE ?>/js/vjsfr.js?v=01072018"></script>
+        <script type="text/javascript">
+            // On lance la vidéo grâce au module "videojs"
+            videojs('my-player', {
+                controls: true,
+                autoplay: true,
+                preload: 'auto',
+                loop: false,
+                width: 622,
+                height: 350,
+                language: 'fr'
+            });
+        </script>
 
         <!-- Grâce à ce petit code, on peut savoir qui vient sur notre site :) -->
 		<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -105,8 +122,6 @@ $title = "Les projets Minecraft du futur !";
             }, true);
         </script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-
         <script type="text/javascript">
             $(document).ready(function() {
                 // Image de fond dynamique
@@ -115,66 +130,7 @@ $title = "Les projets Minecraft du futur !";
                     //["<?= BASE ?>/img/d1.jpg","<?= BASE ?>/img/d2.jpg","<?= BASE ?>/img/d3.jpg","<?= BASE ?>/img/d4.jpg","<?= BASE ?>/img/d5.jpg","<?= BASE ?>/img/d6.jpg"],
                     { fade: 750, duration: 2500 }
                 );
-
-                // Démarrage du timer (cooldown)
-                /*
-                $(".v2cooldown").TimeCircles({
-                    animation: "tricks",
-                    bg_width: 0,
-                    fg_width: 0.01,
-                    circle_bg_color: "rgba(255,255,255,0)",
-                    circle_bg_fill_color: "rgba(255,255,255,0.1)",
-                    count_past_zero: false,
-                    time: {
-                        "Days": {
-                            "text": "Jours",
-                            "color": "#ffffff",
-                            "show": true
-                        },
-                        "Hours": {
-                            "text": "Heures",
-                            "color": "#ffffff",
-                            "show": true
-                        },
-                        "Minutes": {
-                            "text": "Minutes",
-                            "color": "#ffffff",
-                            "show": true
-                        },
-                        "Seconds": {
-                            "text": "Secondes",
-                            "color": "#ffffff",
-                            "show": true
-                        }
-                    }
-                });
-
-                $(window).resize(function() {
-                    $(".v2cooldown").TimeCircles().rebuild();
-                });
-                */
-
-                // Bouton de copie de l'adresse IP !
-                new ClipboardJS('.button-ip');
             });
-
-            // Animation de copie de l'IP
-            var canClick = true;
-            function animationBoutonIp(event) {
-                var target = event.target || event.srcElement || event.delegateTarget;
-                if (target == null || !canClick) return;
-
-                if (target.tagName === "SPAN")
-                    target = target.parentNode;
-
-                target.classList.add("clicked");
-                canClick = false;
-
-                setTimeout(function() {
-                    target.classList.remove("clicked");
-                    canClick = true;
-                }, 3000);
-            }
         </script>
 
 	</body>

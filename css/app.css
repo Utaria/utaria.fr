@@ -80,10 +80,10 @@ body:before {
 
 section.content {
 	display: block;position: relative;
-	width: 840px;height: 500px;
+	width: 840px;height: 750px;
 
 	left: 50%;top: 50%;
-	margin-top: -250px;
+	margin-top: -375px;
 	margin-left: -400px;
     text-align: center;
 	
@@ -150,6 +150,10 @@ section.content p.description {
 
 	text-align: center;
 	margin: 30px auto;
+}
+
+.video-js {
+	margin: 20px auto;
 }
 
 .v2cooldown {
