@@ -49,7 +49,8 @@
                     <?php
                     // Requête vers l'API
                     // TODO : utiliser le cache PHP pour éviter de faire la requête à chaque nouvelle page
-                    $status = App\Helper\API::get("server.status", array(), false, true);
+                    // $status = App\Helper\API::get("server.status", array(), false, true);
+                    $status = (object) array( "maintenance" => false, "players" => 10, "maxplayers" => 70 );
                     ?>
 
                     <?php if (!$status->maintenance): ?>
